@@ -1,0 +1,122 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Code Daze",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://codedaze.io/",
+    "short_name": "CodeDaze",
+    "theme_color": "#ffffff",
+    "description": "Talking about ASP.NET Core & Blazor",
+    "orientation": "any",
+    "background_color": "#ffffff",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/assets/img/icons/favicon.png",
+            "type": "image/png",
+            "sizes": "500x500"
+        },
+        {
+            "sizes": "150x150",
+            "src": "/assets/img/icons/mstile-150x150.png",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/a9db5562-2c88-02e5-dae1-0b94ff3fc6cf.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/e9c42704-7a44-3d42-8b65-6cb2c3653ba2.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/74c611ef-fafc-683e-a9a5-49db407b94ee.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/ff4074d4-bdb7-16bc-9941-81374b8c2cef.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/ec976281-1391-f3ff-03d2-c16e5b9dd60d.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/18d1f4b9-d2f1-fe7b-08f0-1377f328979a.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/aca5eb57-3131-9eac-2787-b44a37266074.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/55f67972-0dcd-a1c1-8b12-c1086c4e0458.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/9077eda7-acea-7cdb-0310-32d2f8e2ca38.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/e65331d5-6324-6001-3300-67a0a62e6606.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/fc778e55-b93e-2299-3f50-423f7ff7c7b8.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/0d86159b-1c69-fdc6-b288-bd7995be25b6.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/468dfe30-605a-145e-73fc-ae880dd4f22c.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/574fd26d-0368-7318-84f8-86c20a6989d9.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/a25069cd-9a8f-bd80-efc9-0dd8f784b25a.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icons/76069d2f-06be-9246-4f2d-896811b79182.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}

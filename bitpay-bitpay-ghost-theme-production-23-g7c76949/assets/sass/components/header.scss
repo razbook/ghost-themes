@@ -1,0 +1,87 @@
+  //
+// Header: CSS changes for navigation menu
+// --------------------------------------------------
+
+// Defines height of main header
+.main-header {
+  margin-bottom: 0;
+  height: 32vh;
+  background-color: #fff;
+  transition:all 0.25s linear;
+  -o-transition:all 0.25s linear;
+  -moz-transition:all 0.25s linear;
+  -webkit-transition:all 0.25s linear;
+}
+
+//overlay override
+.main-nav.overlay {
+  background: none;
+}
+
+// If there is no cover image
+.no-cover.main-header {
+  @extend .bp-background-gradient;
+  min-height: 0;
+  max-height: 2000px;
+  height: 20%;
+  padding: 0;
+}
+
+// Take away padding left so aligns with logo
+.content {
+  padding-left: 0!important;
+  @media (max-width: 501px) {
+    padding-left: 0.9375em!important;
+  }
+}
+
+
+//
+// Mail Chimp
+// --------------------------------------------------
+
+
+#mc_embed_signup {
+  max-width: 500px;
+  margin: 0 auto;
+  #mc-embedded-subscribe {
+
+  }
+}
+// input itself
+#mc_embed_signup input.email {
+  width: 100%!important;
+  border-radius: 5px!important;
+  border: none;
+  border-radius: 50px!important;
+  padding-left: 1em!important;
+}
+
+#mc-embedded-subscribe {
+  float: right!important;
+  position: relative!important;
+  bottom: 48px!important;
+  height: 38px!important;
+  border-top-left-radius: 0!important;
+  border-bottom-left-radius: 0!important;
+  border-top-right-radius: 18px!important;
+  border-bottom-right-radius: 18px!important;
+  max-width: 100px!important;
+  text-transform: uppercase;
+  background: #577AD0!important;
+  font-size: 0.7em!important;
+  &:hover {
+      background: #6289E9!important;
+      transition: background 0.3s;
+  }
+}
+
+//
+// Author Page
+// --------------------------------------------------
+.author-profile {
+  padding: 33px 15px 5rem 15px;
+  @media (max-width: 901px) {
+      padding-top: 0px!important;
+  }
+}

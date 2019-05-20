@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Avatar</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="30" cy="30" r="30"></circle>
+    </defs>
+    <g id="Avatar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#EEEEEE" xlink:href="#path-1"></use>
+        <circle id="head" fill="#CCCCCC" mask="url(#mask-2)" cx="30" cy="30" r="13.2352941"></circle>
+        <path d="M48.2687557,59.868453 C48.2687557,49.7788978 40.0895552,41.5996973 30,41.5996973 C19.9104448,41.5996973 11.7312443,49.7788978 11.7312443,59.868453 C22.3731513,59.7834129 37.3455622,59.9106757 48.2687557,59.868453 Z" id="body" fill="#CCCCCC" mask="url(#mask-2)"></path>
+    </g>
+</svg>

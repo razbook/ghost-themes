@@ -1,0 +1,35 @@
+{
+    "name"        : "crisp-narrow",
+    "description" : "A minimalist, responsive, and open-source theme for Ghost",
+    "version"     : "1.0.0",
+    "engines": {
+        "ghost": ">=2.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Chris Arderne",
+        "email": "chris@rdrn.me",
+        "url": "https://rdrn.me"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/carderne/crisp-narrow.git"
+    },
+    "bugs": "https://github.com/carderne/crisp-narrow/issues",
+    "contributors": "https://github.com/carderne/crisp-narrow/graphs/contributors",
+    "config": {
+        "posts_per_page": 50
+    }
+}

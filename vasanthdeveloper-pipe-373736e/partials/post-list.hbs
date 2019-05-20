@@ -1,0 +1,8 @@
+{{#foreach posts}}
+<article>
+	<small>{{date published_at format="MMMM DD, YYYY"}} In {{#foreach tags limit="1"}}<a href="{{url}}">{{name}}</a>{{/foreach}}</small>
+	<a href="{{url absolute='true'}}"><h1 class="display-4 posts-heading">{{title}}</h1></a>
+	<p>{{excerpt characters="300"}} ...</p>
+	<a href="{{url}}"><p>Read More</p></a>
+</article>
+{{/foreach}}

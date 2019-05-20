@@ -1,0 +1,55 @@
+{{!< default}}
+
+{{! Everything inside the #post tags pulls data from the post }}
+
+{{! The big cover on the left }}
+{{#post}}
+<aside class="cover" 
+	{{#if feature_image}} 
+	    style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{img_url feature_image}});"
+	{{else}}
+		{{#if @blog.cover_image}} 
+		    style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{@blog.cover_image}});"
+        {{/if}}
+	{{/if}}>	
+	<div class="cover-content">
+		<div class="container">
+		    {{#if @blog.logo}}
+            <div class="cover-logo">
+               <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="small-logo"></a> 
+            </div>            
+            {{/if}}
+			<h1 class="cover-headline">{{title}}</h1>
+			<p class="cover-text">{{#if tags}}&mdash; {{tags separator=", "}} &mdash;{{/if}}</p>
+		</div>		
+	</div>
+	<div class="cover-text-article-time">
+        <div class="container">
+            <strong>
+                <time datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+                   {{date format=' MMMM'}} {{date format='DD'}}, {{date format=' YYYY'}}	
+                </time>
+            </strong>	
+        </div>	    	
+	</div>
+</aside>
+
+{{! The post content on the right }}
+<main class="content">
+    <article class="article-content" role="article" itemscope itemtype="//schema.org/Article">
+        <div class="container">
+            {{! The tag below includes social sharing bar in the top of the post - partials/social-share.hbs }}
+            {{> social-share}}                      
+            {{content}}
+            {{! The tag below includes social sharing bar in the bottom of the post - partials/social-share.hbs }}
+            {{> social-share}}
+        </div>
+	</article>
+	{{! The tag below includes author details - partials/author.hbs }}
+	{{> author-details}}
+	{{! The tag below includes read more section in the post - partials/read-more.hbs }}	
+	{{> read-more}}
+</main>
+{{! The tag below includes post comments - partials/comments.hbs }}
+{{> comments}}
+{{/post}}

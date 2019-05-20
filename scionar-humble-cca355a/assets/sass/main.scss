@@ -1,0 +1,41 @@
+@import "variables";
+@import "navigation";
+@import "site-header";
+@import "site-main";
+@import "post-card";
+@import "site-footer";
+@import "some-links";
+@import "post-full";
+@import "author-card";
+@import "progress";
+@import "pagination";
+@import "lifeline";
+@import "koenig";
+
+html {
+  color: $color__tuna;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: calc(12px + 0.6vmin);
+  line-height: 160%;
+}
+
+body {
+  background-color: $color__white;
+  margin: 0;
+}
+
+h1 {
+  @include font__h1();
+}
+
+h2 {
+  @include font__h2();
+}
+
+h3, h4 {
+  @include font__h3();
+}
+
+a {
+  color: $color__pelorous;
+}

@@ -1,0 +1,47 @@
+{{! Read more section of the post }}
+
+{{#prev_post}}
+<article class="article-item" role="article" itemscope itemtype="//schema.org/Article">
+    <div class="article-read-more-label">&mdash;Read This Next&mdash;</div>
+    <h1 class="article-item-headline" itemprop="headline">
+        <a href="{{{url}}}" rel="bookmark">
+            {{title}}
+        </a>
+    </h1>
+
+    <hr>
+
+    <div class="article-item-body" itemprop="articleBody">
+        {{excerpt characters="140"}}
+    </div>
+
+    <time class="article-item-time" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+        <strong>
+            {{date format=' MMMM'}} {{date format='DD'}}, {{date format=' YYYY'}}
+        </strong>
+    </time>
+</article>
+{{/prev_post}}
+
+{{#next_post}}
+<article class="article-item" role="article" itemscope itemtype="//schema.org/Article">
+   <div class="article-read-more-label">&mdash;You Might Enjoy&mdash;</div>
+    <h1 class="article-item-headline" itemprop="headline">
+        <a href="{{{url}}}" rel="bookmark">
+            {{title}}
+        </a>
+    </h1>
+
+    <hr>
+
+    <div class="article-item-body" itemprop="articleBody">
+        {{excerpt characters="140"}}
+    </div>
+
+    <time class="article-item-time" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+        <strong>
+            {{date format=' MMMM'}} {{date format='DD'}}, {{date format=' YYYY'}}
+        </strong>
+    </time>
+</article>
+{{/next_post}}

@@ -1,0 +1,17 @@
+{
+  "name": "no-nonsense",
+  "version": "0.2.3",
+  "author": {"email": "mihnea@linux.com"},
+  "config": { "posts_per_page": 5},
+  "devDependencies": {
+    "del": "^0.1.1",
+    "gulp": "^3.8.6",
+    "gulp-concat": "^2.3.4",
+    "gulp-minify-css": "^0.3.7",
+    "gulp-sass": "^0.7.2",
+    "gulp-uglify": "^0.3.1",
+    "inherits": "^2.0.1",
+    "lodash": "^3.0.1",
+    "streamqueue": "^0.1.1"
+  }
+}

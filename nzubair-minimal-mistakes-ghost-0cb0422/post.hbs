@@ -1,0 +1,72 @@
+{{!< default}} 
+{{! Post }}
+
+{{#post}}
+<article class="postpage" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="{{title}}">
+    <meta itemprop="description" content="{{excerpt}}">
+    <meta itemprop="datePublished" content="{{date format="MMMM D, YYYY"}}">
+    <div class="page__inner-wrap">
+        <header>
+            <h1 class="page__title" itemprop="headline">{{title}}</h1>
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{reading_time}}</p>
+        </header>
+        <section class="page__content {{post_class}}" itemprop="text">
+
+            {{content}}
+
+        </section>
+        <footer class="page__meta">
+            <p class="page__taxonomy">
+                <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+                <span itemprop="keywords">
+                    {{#if tags}}
+
+                        {{#primary_tag}}
+                            <a href="{{url}}" class="page__taxonomy-item page__taxonomy-item-primary" rel="tag">{{name}}</a><span class="sep">, </span>
+                        {{/primary_tag}}
+                        
+                        {{#foreach tags from="2"}}
+                            <a href="{{url}}" class="page__taxonomy-item" rel="tag">{{name}}</a><span class="sep">, </span>
+                        {{/foreach}}
+                        
+                    {{/if}}
+                </span>
+            </p>
+            <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong>
+                <time datetime="{{date format="YYYY-DD-MMTHH:mm:ss-05:00"}}">{{date format="MMMM D, YYYY"}}</time></p>
+        </footer>
+        <section class="page__share">
+            <h4 class="page__share-title">Share on</h4>
+            <a href="https://twitter.com/intent/tweet?via=nsr81&text={{title}} {{url absolute='true'}}"
+                class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span>
+                    Twitter</span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{url  absolute='true'}}"
+                class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span>
+                    Facebook</span></a>
+            
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute='true'}}"
+                class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span>
+                    LinkedIn</span></a>
+        </section>
+        <nav class="pagination">
+            {{#prev_post}}
+            <a href="{{url}}" class="pagination--pager" title="{{title}}">Previous</a>
+            {{else}}
+            <a href="#" class="pagination--pager disabled">Previous</a>
+            {{/prev_post}}
+
+            {{#next_post}}
+            <a href="{{url}}" class="pagination--pager" title="{{title}}">Next</a>
+            {{else}}
+            <a href="#" class="pagination--pager disabled">Next</a>
+            {{/next_post}}
+        </nav>
+    </div>
+    {{> "comments" }}
+    </article>
+    <!-- {{comment_id}} -->
+    {{#get "posts" limit="4" filter="id:-{{comment_id}}" }}
+        {{> "related" recentposts=posts }}
+    {{/get}}
+{{/post}}

@@ -1,0 +1,14 @@
+{{!< default}}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">{{@blog.title}}</h1>
+		<p class="lead">{{@blog.description}}</p>
+	</div>
+
+<!-- Posts -->
+	<div id="posts-listing" class="container text-left">
+		{{> "post-list"}}
+	</div>
+
+	<div id="pagination" class="container text-center">
+		{{pagination}}
+	</div>

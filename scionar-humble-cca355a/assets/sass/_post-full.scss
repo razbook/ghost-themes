@@ -1,0 +1,56 @@
+.post-full__meta-date {
+  color: $color__silver;
+}
+
+.post-full__image {
+  background-size: cover;
+  border-radius: 0.5rem;
+  margin: 2rem 0 0;
+  width: 100%;
+}
+
+.post-full__content {
+  margin: 4rem 0 0;
+
+  iframe {
+    display: block;
+    margin: 4rem auto;
+    max-width: 100%;
+  }
+
+  pre {
+    border-bottom: 1px solid $color__gallery;
+    border-top: 1px solid $color__gallery;
+    font-family: monospace !important;
+    font-size: 0.78rem !important;
+    margin: 2rem 0 !important;
+    padding: 1.5rem 0 !important;
+    overflow: auto;
+  }
+
+  .footnotes {
+
+  }
+
+  .footnotes-list {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .footnote-backref {
+    text-decoration: none;
+  }
+
+  hr,
+  .footnotes-sep {
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.post-full__footer {
+  margin: 4rem 0 0;
+}
+
+.post-full__comments {
+  margin: 4rem 0 0;
+}

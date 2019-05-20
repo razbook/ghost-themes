@@ -1,0 +1,35 @@
+<div class="uk-width-1-4@l uk-width-1-4@m uk-width-1-4@xl uk-width-1-1@s">
+<a href="{{url}}" title="{{title}}">
+    <div class="uk-card uk-card-default uk-card-small uk-card-hover">
+        {{#if feature_image}}
+        <div class="uk-card-media-top">
+            <img src="{{feature_image}}" alt="{{title}}">
+        </div>
+        {{/if}}
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    {{#foreach authors}}
+                        {{#if profile_image}}
+                            <a href="{{url}}" title={{name}}>
+                                <img class="uk-border-circle" width="40" height="40" src="{{profile_image}}" alt="{{name}}"/>
+                            </a>
+                        {{/if}}
+                    {{/foreach}}
+                </div>
+                <div class="uk-width-expand">
+                    <h5 class="uk-margin-remove-bottom uk-text-bold">{{title}}</h5>
+                    <p class="uk-text-meta uk-margin-remove-top">{{reading_time}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p class="uk-text-small">{{excerpt words="33"}}</p>
+            <p class="uk-text-meta uk-margin-remove">{{date}}</p>
+        </div>
+        <div class="uk-card-footer">
+            <a href="{{url}}" title="Read more about... {{title}}">Read more...</a>
+        </div>
+    </div>
+</a>
+</div>

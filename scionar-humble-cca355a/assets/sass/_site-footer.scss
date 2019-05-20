@@ -1,0 +1,13 @@
+@import "variables";
+
+.site-footer {
+  padding: 3rem 0 3rem;
+}
+
+.site-footer__content {
+  @include content-wrapper();
+}
+
+.site-footer__copyright {
+  text-align: center;
+}

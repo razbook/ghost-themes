@@ -1,0 +1,37 @@
+<a href="{{url}}">
+<article class="{{post_class}} series-article-preview">
+  {{#if feature_image}}
+      <div class="post-card-image" style="background-image: url({{img_url feature_image}})">
+        <div class="series-post-count">
+          <span>Post {{@number}}</span>
+        </div>
+      </div>
+  {{/if}}
+  <div class="details">
+    <div class="post-head">
+      <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+      <span class="post-excerpt">{{excerpt words="40"}}</span>
+    </div>
+      <div class="meta">
+        {{#primary_tag}}
+          <span class="tags meta-item {{slug}}"><i class="fas fa-tags"></i> <span>{{name}}</span></span>
+        {{/primary_tag}}
+        {{#primary_author}}
+          {{primary_author.bio}}
+          {{#unless profile_image}}
+            <a href="{{url}}" class="meta-item author"><i class="fas fa-user" style="width:18px; height:18px; display:inline-block; margin-right:10px;"></i><span>{{name}}</span></a>
+            <a href="{{url}}" class="author-mobile"><i class="fas fa-user" style="width:18px; height:18px; display:inline-block; margin-right:10px;"></i></a>
+            <!--<div class="info"><span>{{slug}}</span><span class="mobile-date">{{date format="MMM DD"}}</span></div>-->
+            </a>
+          {{/unless}}
+          {{#if profile_image}}
+            <a href="{{url}}" class="meta-item author"><img src="{{img_url profile_image}}" alt="{{name}} Author image" class="avi" data-rjs="3"><span>{{slug}}</span></a>
+            <a href="{{url}}" class="author-mobile"><img src="{{img_url profile_image}}" alt="{{name}} Author image" class="avi" data-rjs="3"/></a>
+            <div class="info"><span class="mobile-name">{{slug}}</span><!--<span class="mobile-date">{{date format="MMM DD"}}</span>--></div>
+          {{/if}}
+        {{/primary_author}}
+        <span class="date meta-item"><i class="fal fa-calendar"></i> <span>{{date format="MMM DD"}}</span></span>
+      </div>
+  </div>
+</article>
+</a>

@@ -1,0 +1,17 @@
+<div class="uk-navbar-container uk-padding-small" uk-navbar>
+    <div class="uk-navbar-left">
+        <a href="{{@blog.url}}" class="uk-navbar-item uk-logo">
+            <div class="uk-text-left">
+                {{ @blog.title }}
+                <div class="uk-navbar-subtitle">{{ @blog.description }}</div>
+            </div>
+        </a>
+        <div class="uk-navbar-left uk-padding-large uk-padding-remove-top uk-padding-remove-bottom">
+            <ul class="uk-navbar-nav">
+                {{#foreach navigation}}
+                    <li class="uk-parent nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+                {{/foreach}}
+            </ul>
+        </div>
+    </div>
+</div>

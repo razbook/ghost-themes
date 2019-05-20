@@ -1,0 +1,14 @@
+{{! Author details displayed in the post and in the author page }}
+{{#author}}
+<div class="author">
+	<div class="container">
+		<a class="author-image" href="{{url}}" style="background-image: url({{img_url profile_image}});"></a>
+		<div class="author-info">
+			<h3><a href="{{url}}">{{name}}</a></h3>
+			<p>{{bio}}</p>
+			<a href="{{website}}" target="_blank">{{website}}</a>
+		</div>
+	</div>
+</div>
+{{/author}}
+

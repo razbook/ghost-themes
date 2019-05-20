@@ -1,0 +1,15 @@
+{{#foreach posts}} 
+<article class="post-summary {{post_class}}">
+    <span class="post-summary-category">{{primary_tag.name}}</span>
+    <h2 class="post-summary-header"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
+    <p>{{excerpt characters="300"}}&hellip;</p>
+    <footer class="post-summary-meta">
+        <span class="published">
+        <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="Do MMMM YYYY"}}</time>
+        </span>
+        <span class="readtime">
+        {{reading_time}}
+        </span>
+    </footer>
+</article>
+{{/foreach}}

@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{#post}}
+{{! The big cover on the left }}
+<aside class="cover" 
+	{{#if feature_image}} 
+	    style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{img_url feature_image}});"
+	{{else}}
+		{{#if @blog.cover_image}} 
+		    style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{@blog.cover_image}});"
+        {{/if}}
+	{{/if}}>
+	
+	<div class="cover-content">
+		<div class="container">
+		    {{#if @blog.logo}}
+            <div class="cover-logo">
+               <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="small-logo"></a> 
+            </div>            
+            {{/if}}
+			<h1 class="cover-headline">{{title}}</h1>
+		</div>		
+	</div>
+	{{! The tag below includes social links on the left - partials/social-links.hbs }}	
+	{{> social-links}}
+</aside>
+
+{{! The main content area of the page on the right }}
+<main class="content">
+    <article class="article-content" role="article" itemscope itemtype="//schema.org/Article">
+        <div class="container">
+            <br>               
+            {{content}}
+            <br>
+        </div>
+	</article>
+</main>
+{{/post}}

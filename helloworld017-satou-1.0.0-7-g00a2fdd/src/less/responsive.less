@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+	#satou-posts .post-list .post-card {
+		flex-direction: column;
+
+		.post-card-content {
+			width: 100%;
+		}
+
+		.post-card-image {
+			margin: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	.post-template, .page-template {
+		.post-full:not(.no-image) {
+			margin-top: 0;
+		}
+
+		.post-wrapper {
+			padding: 0 10px;
+		}
+	}
+
+	body:not(.post-template, .page-template) #navigation .nav-puller {
+		top: 20px;
+	}
+}

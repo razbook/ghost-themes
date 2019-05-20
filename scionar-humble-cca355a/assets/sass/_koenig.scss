@@ -1,0 +1,58 @@
+.kg-image-card {
+  margin: 4rem 0;
+
+  .kg-image {
+    border-radius: 0.5rem;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  &.kg-width-wide .kg-image {
+    margin: 0 0 0 50%;
+    max-width: 100vw;
+    transform: translateX(-50%);
+    width: 120%;
+  }
+
+  &.kg-width-full .kg-image {
+    margin: 0 0 0 50%;
+    max-width: 100vw;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
+
+  figcaption {
+    color: $color__black--50;
+    font-style: italic;
+    margin: 1rem 0 0;
+  }
+}
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1040px;
+  width: 100vw;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}

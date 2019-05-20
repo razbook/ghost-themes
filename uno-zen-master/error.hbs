@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html lang="en" style="background: url({{@blog.cover_image}}) center/cover no-repeat fixed">
+  <head>
+    <title>404, Houston, we have a problem</title>
+    {{> meta}}
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,600,300">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/uno-zen.css"}}" />
+    {{ghost_head}}
+  </head>
+  <body>
+    <article>
+      <section>
+        <div class="astro-wrap">
+          <a class="astronaut" href="#" title="return to base"></a>
+        </div>
+        <div class="mayday">
+          <h2>
+            Houston, we've got a problem. <br>
+            Houston, 404 error appeared.
+          </h2>
+          <hr class="divider short">
+          <h2>
+            What happens now?
+          </h2>
+        </div>
+        <div class="astro-options">
+          <a id="panic-button" class="btn small" href="#">Panic button</a>
+          <a id="safe-button" class="btn small" href="/#open">Safe button</a>
+        </div>
+      </section>
+    </article>
+    {{ghost_foot}}
+    <script src="{{asset "js/uno-zen.common.js"}}" type="text/javascript" charset="utf-8"></script>
+    {{> google-analytics}}
+  </body>
+</html>

@@ -1,0 +1,46 @@
+//
+// Layout
+// --------------------------------------------------
+body {
+  background-color: $body-bg;
+  transition:all 1s linear;
+  -o-transition:all 1s linear;
+  -moz-transition:all 1s linear;
+  -webkit-transition:all 1s linear;
+}
+
+
+.site-wrapper{
+  max-width: 1450px;
+  -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  margin: auto;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+
+.inner {
+  max-width: 1200px;
+}
+
+.pagination {
+  margin-left: 0;
+  margin-right: 0;
+  a {
+      border-radius: 5em;
+    }
+
+}
+
+iframe {
+  margin: 0;
+}
+
+#twitter-widget-0 {
+  display: inline-block;
+}

@@ -1,0 +1,13 @@
+{{!< default}}
+
+<header class="archive-header u-textAlignCenter">
+{{#author}}
+    <h1 class="archive-title">作者：{{name}} 的文章</h1>
+{{/author}}
+</header>
+<section class="blockGroup">
+    {{> "loop"}}
+</section>
+<div class="u-textAlignCenter postsFooterNav">
+    {{pagination}}
+</div>

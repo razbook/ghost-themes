@@ -1,0 +1,87 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header class="main-header {{#if img_url}}" style="background-image: url({{img_url}}){{else}}no-cover{{/if}}">
+  <nav class="main-nav {{#if img_url}}overlay{{/if}}">
+    <div class="main-header-content inner">
+      {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+      {{#if @blog.navigation}}
+      {{/if}}
+    </div>
+  </nav>
+</header>
+<div class="inner">
+
+
+  <main class="content large-10 columns margin-top " role="main">
+    <section class="post-content">
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h1 class="post-title">{{title}}</h1>
+                <section class="post-meta">
+                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                    <div class="post-tag">{{tags}}</div>
+                </section>
+            </header>
+            <section class="post-content">
+                {{content}}
+            </section>
+        </article>
+        {{!-- TWITTER SHARE BITTON --}}
+        <a style="margin: 0;" href="https://twitter.com/share" class="twitter-share-button" data-via="bitpay">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        {{!-- facebook sharebutton --}}
+        <div style="margin: 0; top: -10px;" class="fb-share-button" data-href="https://blog.bitpay.com/" data-layout="button_count"></div>
+
+        <footer class="post-footer">
+          {{! Everything inside the #author tags pulls data from the author }}
+        </footer>
+  </main>
+
+  <div class="sidebar large-2 columns post-author">
+    {{#author}}
+        {{#if img_url}}
+        <figure class="author-image border-right">
+            <a class="img" href="{{url}}" style="background-image: url({{img_url}})"><span class="hidden">{{name}}'s Picture</span></a>
+        </figure>
+        {{/if}}
+        <section class="author">
+            <div class="author-name"><a href="{{url}}">{{name}}</a></h4>
+            {{#if bio}}
+                <div class="author-description">{{bio}}</div>
+            {{/if}}
+            <div class="social-icons">
+              {{#if website}}
+                  <a target="blank" class="github" href="{{website}}"><img src="/assets/images/user-github.svg"></a>
+              {{/if}}
+              {{#if location}}
+                  <a target="blank" class="twitter" href="{{location}}"><img src="/assets/images/user-twitter.svg"></a>
+              {{/if}}
+            </div>
+        </section>
+    {{/author}}
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{{/post}}
+
+<div class="clearfix"></div>
+
+{{> "cta"}}
+{{> "footer"}}

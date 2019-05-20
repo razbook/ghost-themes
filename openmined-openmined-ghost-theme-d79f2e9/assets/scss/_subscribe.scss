@@ -1,0 +1,67 @@
+$subscribe-border: 6px;
+
+#subscribe {
+  position: relative;
+  text-align: center;
+  margin: $large-space + $small-space 0px $medium-space + $small-space 0px;
+  @include tablet-up {
+    margin: $large-space + $small-space 0px $medium-space 0px;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    left: 50%;
+    height: $subscribe-border;
+    margin-left: -0.5 * $large-space;
+    width: $large-space;
+    background: $success-color;
+    content: '';
+  }
+  &:before {
+    top: -$medium-space + $subscribe-border;
+  }
+  &:after {
+    bottom: -$medium-space;
+  }
+  .subscribe-hold {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $small-space 0px;
+    @include capped-text();
+    @include tablet-up {
+      flex-direction: row;
+      justify-content: center;
+    }
+    span {
+      margin-right: $small-space;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      input {
+        background: none;
+        border: none;
+        @include capped-text();
+        font-weight: $normal-weight;
+      }
+      button {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color $anim-time $anim-func;
+        color: $success-color;
+        &:hover {
+          color: darken($success-color, 7%);
+        }
+      }
+    }
+  }
+  .rss {
+    color: $light-gray;
+    &:hover {
+      color: $medium-gray;
+    }
+  }
+}

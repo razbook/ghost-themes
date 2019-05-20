@@ -1,0 +1,58 @@
+//
+// Typography
+// --------------------------------------------------
+
+@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700);
+
+body {
+  font-family: 'Karla', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, h6, p {
+  font-family: 'Karla', sans-serif;
+  color: $bp-grey-90;
+  font-weight: 100;
+}
+
+
+pre {
+  background: $bp-grey-100!important;
+  color: #fff;
+}
+
+a {
+  color: $bp-light-blue;
+  text-decoration: none;
+  &:hover {
+    color: #375092;
+  }
+}
+
+p {
+  font-feature-settings: normal;
+}
+
+//
+// Header Typography
+// --------------------------------------------------
+
+
+.page-title {
+  font-family: 'Karla', sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 2px;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+.page-subtitle {
+  font-size: 1em;
+  opacity: 0.85;
+  line-height: 1.3em;
+  margin: 1.25em 0;
+  color: #FFFFFF;
+}

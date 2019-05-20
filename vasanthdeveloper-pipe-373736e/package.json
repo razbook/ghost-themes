@@ -1,0 +1,34 @@
+{
+	"name": "pipe",
+	"description": "Pipe is a Bootstrap 4 based Ghost Blog Theme, created by Vasanth Developer.",
+	"version": "1.0.0",
+	"engines": {
+		"ghost": ">=1.2.0"
+	},
+	"license": "MIT",
+    "author": {
+        "name": "Vasanth Developer",
+        "email": "vasanthdevelopers@gmail.com",
+        "url": "https://youtube.com/vasanthdeveloper"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Blog",
+            "Minimal",
+            "Bootstrap 4"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vasanthdeveloper/Pipe-Ghost-Theme.git"
+    },
+    "bugs": "https://github.com/vasanthdeveloper/Pipe-Ghost-Theme/issues",
+    "config": {
+        "posts_per_page": 5
+    }
+}

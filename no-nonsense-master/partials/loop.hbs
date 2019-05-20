@@ -1,0 +1,27 @@
+{{! This is the post loop - each post will be output using this markup }}
+
+<section class="post-loop small-12 large-10 large-centered columns">
+
+{{#foreach posts}}
+
+<article class="{{post_class}}" role="article" itemscope itemtype="http://schema.org/Article">
+    <p>
+        <span class="post-title" itemprop="headline"><a href="{{url}}">{{{title}}}</a></span>
+        <span class="post-date">
+            published
+            <time class="post-date" datetime="{{date format='MMMM-Do-YYYY'}}" itemprop="datePublished">{{date format="MMMM Do YYYY"}}</time>
+        </span>
+        <span class post-author>
+        	by {{author}}
+        </span>
+    </p>
+</article>
+
+{{/foreach}}
+
+</section>
+
+{{! Previous/next page links - displayed on every page }}
+<div class="pagination pagination-centered" role="navigation">
+    {{pagination}}
+</div>

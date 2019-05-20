@@ -1,0 +1,1078 @@
+// compress: true, strictMath: true
+
+/* ==============================================================================
+	TABLE OF CONTENTS
+    =================
+    0. normalize.css v3.0.2 (minified) | MIT License | git.io/normalize
+	1. General styles
+		1.1 Base styles
+		1.2 Utility Classes
+		1.3 Buttons
+	2. Cover (aside) - Left side panel
+        2.1 Social links
+	3. Content (main) - Right side panel
+		3.1 Articles list (loop)
+        3.2 Article content (post)
+    4. Social sharing bar
+	5. Navigation
+	6. Comments
+    7. Author
+    8. Pagination
+    9. Transitions
+    10. Colors
+=================================================================================*/
+
+/* ==============================================================================
+	 0. normalize.css v3.0.2 (minified) | MIT License | git.io/normalize
+=================================================================================*/
+img,
+legend {
+  border: 0;
+}
+legend,
+td,
+th {
+  padding: 0;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+optgroup,
+strong {
+  font-weight: 700;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre,
+textarea {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type='search'] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ==============================================================================
+	1. General styles
+=================================================================================*/
+
+/* ==============================================================================
+		1.1 Base styles
+=================================================================================*/
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', 'Lato', sans-serif, 'Microsoft Yahei';
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 300;
+  color: @text_color;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  .transition(0.4s,cubic-bezier(0.645,0.045,0.355,1));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Lustria', serif, 'Microsoft Yahei';
+  color: @heading_color;
+}
+
+h1 {
+  font-size: 2rem;
+
+  @media screen and (max-width: 550px) {
+    font-size: 1.75rem;
+  }
+}
+
+a {
+  color: #3498db;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    color: #2980b9;
+  }
+}
+
+pre {
+  padding: 1rem;
+  background: @grey_light;
+  overflow: auto;
+  border: 1px solid #f3f3f3;
+}
+
+code {
+  padding: 0 2px;
+}
+
+code,
+kbd,
+pre,
+samp {
+  color: @heading_color;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: @text_color;
+}
+
+blockquote {
+  position: relative;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-style: oblique;
+  text-align: center;
+  color: @heading_color;
+  letter-spacing: 1px;
+
+  p:before {
+    content: '“';
+    font-weight: 700;
+  }
+
+  p:after {
+    content: '”';
+    font-weight: 700;
+  }
+}
+
+ul,
+ol {
+  text-align: left;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: @grey_light;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  margin: 5px;
+  background-color: @text_color;
+  -webkit-border-radius: 5px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  height: 5px;
+  display: block;
+}
+@font-face {
+  font-family: 'Lustria';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lustria'), local('Lustria-Regular'),
+    url(//yuanliang.io/assets/fonts/lustria/v4/pVV03LAhqnRi6PONvHzn8wLUuEpTyoUstqEm5AMlJo4.woff)
+      format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'),
+    url(//yuanliang.io/assets/fonts/lato/v11/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff)
+      format('woff');
+}
+/* ==============================================================================
+		1.2 Utility Classes
+=================================================================================*/
+.container {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+
+  @media screen and (max-width: 550px) {
+    width: 85%;
+  }
+}
+/* ==============================================================================
+		1.3 Buttons
+=================================================================================*/
+button,
+.button {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  color: @text_color;
+  display: inline-block;
+  outline: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1.25rem;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  .transition(0.2s,cubic-bezier(0.645,0.045,0.355,1));
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: @text_color;
+  }
+}
+/* ==============================================================================
+	2. Cover (aside) - Left side panel
+=================================================================================*/
+.cover {
+  color: #fff;
+  background-size: cover !important;
+  background-position: 50% 50%;
+  background-color: #3498db;
+
+  .cover-logo {
+    text-align: right;
+
+    .big-logo {
+      max-height: 6rem;
+      max-width: 80%;
+    }
+
+    .small-logo {
+      max-height: 3rem;
+      max-width: 50%;
+    }
+  }
+
+  .cover-content {
+    position: relative;
+
+    .cover-headline {
+      font-family: 'Lustria', serif, 'Microsoft Yahei';
+      font-size: 4rem;
+      text-align: right;
+      margin: 1rem 0 0 0;
+      color: #fff;
+    }
+
+    .cover-text {
+      text-align: right;
+      font-size: 1.25rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    @media screen and (min-width: 800px) {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .cover-text-article-time {
+    width: 100%;
+    margin-top: 3rem;
+
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      left: 0;
+      bottom: 5rem;
+      margin-top: 0;
+      text-align: right;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    display: table;
+    position: absolute;
+    width: 50%;
+    float: left;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 3rem 0;
+
+    .cover-logo,
+    .cover-headline,
+    .cover-text,
+    .cover-text-article-time {
+      text-align: center !important;
+    }
+  }
+}
+
+/* ==============================================================================
+	    2.1. Social links
+=================================================================================*/
+.social-links {
+  width: 100%;
+
+  a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 2rem;
+  }
+
+  @media screen and (min-width: 800px) {
+    left: 0;
+    bottom: 5rem;
+    position: absolute;
+    text-align: right;
+  }
+
+  @media screen and (max-width: 800px) {
+    text-align: center;
+    margin-top: 3rem;
+    a {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+    }
+  }
+}
+/* ==============================================================================
+	3. Content (main) - Right side panel
+=================================================================================*/
+.content {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+  }
+}
+/* ==============================================================================
+		3.1 Articles list (loop)
+=================================================================================*/
+.article-item {
+  position: relative;
+  padding: 10% 20%;
+
+  &:nth-child(even) {
+    background: @grey_light;
+  }
+
+  .article-item-headline {
+    margin: 0 0 1rem;
+    text-align: center;
+
+    a {
+      font-family: 'Open Sans', Lustria, serif, 'Microsoft Yahei';
+      text-decoration: none;
+      color: @heading_color;
+    }
+  }
+
+  hr {
+    width: 20%;
+    margin: 0 40%;
+    border: none;
+    background: @text_color;
+    height: 1px;
+  }
+
+  .article-item-body {
+    text-align: justify;
+    margin-top: 1rem;
+    line-height: 1.8rem;
+  }
+
+  .article-item-tag {
+    font-family: 'Playfair Display', serif, 'Microsoft Yahei';
+    font-size: 0.9rem;
+    font-style: oblique;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: @text_color;
+    }
+  }
+
+  .article-item-author {
+    display: block;
+    text-align: center;
+    border-radius: 100%;
+    margin: 1rem auto 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .article-item-time {
+    margin-top: 1rem;
+    display: block;
+    font-size: 0.9rem;
+    text-align: center;
+    color: @heading_color;
+  }
+
+  .article-read-more-label {
+    font-size: 0.9rem;
+    font-style: oblique;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 12.5% 7.5%;
+  }
+}
+/* ==============================================================================
+		3.2 Article content (post)
+=================================================================================*/
+.article-content {
+  line-height: 1.8rem;
+  text-align: justify;
+
+  @media screen and (max-width: 550px) {
+    text-align: left;
+  }
+
+  * {
+    max-width: 100%;
+  }
+}
+
+/* ==============================================================================
+	4. Social sharing bar
+=================================================================================*/
+.social-sharing-bar {
+  margin: 3rem 0;
+
+  a {
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    .transition(0.2s,cubic-bezier(0.645,0.045,0.355,1));
+
+    i,
+    i:before {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .share-facebook:hover {
+    border-color: #3b5998;
+    background-color: #3b5998;
+    color: #fff;
+  }
+
+  .share-twitter:hover {
+    border-color: #00aced;
+    background-color: #00aced;
+    color: #fff;
+  }
+
+  .share-weibo:hover {
+    border-color: #dd3b39;
+    background-color: #dd3b39;
+    color: #fff;
+  }
+
+  .share-qq:hover {
+    border-color: #006cb6;
+    background-color: #006cb6;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 800px) {
+    text-align: center;
+
+    &:first-child {
+      display: none;
+    }
+
+    a {
+      margin: 0 0.5rem;
+    }
+
+    .share-facebook {
+      border-color: #3b5998;
+      background-color: #3b5998;
+      color: #fff;
+    }
+
+    .share-twitter {
+      border-color: #00aced;
+      background-color: #00aced;
+      color: #fff;
+    }
+
+    .share-weibo {
+      border-color: #dd3b39;
+      background-color: #dd3b39;
+      color: #fff;
+    }
+
+    .share-linkedin {
+      border-color: #0077b5;
+      background-color: #0077b5;
+      color: #fff;
+    }
+
+    .share-qq {
+      border-color: #006cb6;
+      background-color: #006cb6;
+      color: #fff;
+    }
+  }
+}
+/* ==============================================================================
+	5. Navigation
+=================================================================================*/
+.navigation {
+  .transition(0.4s,cubic-bezier(0.645,0.045,0.355,1));
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    text-align: center;
+    line-height: 4rem;
+    display: block;
+
+    &.nav-current {
+      text-decoration: overline;
+    }
+
+    a {
+      font-size: 2rem;
+      color: @heading_color;
+      text-decoration: none;
+      font-family: 'Playfair Display', serif, 'Microsoft Yahei';
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: table;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+
+    ul {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    max-height: 4.5rem;
+    overflow: hidden;
+
+    ul {
+      margin: 3rem 0;
+      opacity: 0;
+    }
+  }
+}
+
+.toggle-navigation {
+  border: 0;
+  background-color: transparent;
+  border-bottom: 0.25rem solid hsl(0, 0, 98%);
+  border-top: 0.25rem solid hsl(0, 0, 98%);
+  cursor: pointer;
+  height: 1.5rem;
+  margin: 3rem;
+  outline: 0;
+  position: absolute;
+  width: 2.25rem;
+  z-index: 9;
+  .transition(0.2s,ease-out);
+
+  &::after,
+  &::before {
+    border-bottom: 0.25rem solid hsl(0, 0, 98%);
+    bottom: 0.375rem;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: transform 200ms ease-out;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin: 1.5rem;
+
+    &,
+    &::after,
+    &::before {
+      border-color: @heading_color;
+    }
+  }
+}
+
+body.open-navigation {
+  .toggle-navigation {
+    border-color: transparent;
+    transform: rotateZ(90deg);
+
+    &::after,
+    &::before {
+      transition: transform 200ms ease-out;
+    }
+
+    &::after {
+      transform: rotateZ(45deg);
+    }
+
+    &::before {
+      transform: rotateZ(-45deg);
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    -webkit-transform: translate(50%, 0);
+    transform: translate(50%, 0);
+  }
+
+  @media screen and (max-width: 800px) {
+    .navigation {
+      max-height: 100rem;
+
+      ul {
+        opacity: 1;
+      }
+    }
+  }
+}
+/* ==============================================================================
+	6. Comments (aside)
+=================================================================================*/
+.comments {
+  padding-top: 3rem;
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    width: 100%;
+    background: #fff;
+  }
+
+  @media screen and (min-width: 800px) {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    overflow-y: auto;
+    border-left: 1px solid #f3f3f3;
+    background: @grey_light;
+    -webkit-transform: translate(200%, 0);
+    transform: translate(200%, 0);
+    .transition(0.4s,cubic-bezier(0.645,0.045,0.355,1));
+  }
+}
+
+.toggle-comments {
+  float: right;
+
+  @media screen and (max-width: 900px) {
+    span {
+      display: none;
+    }
+
+    i:before {
+      margin: 0 -4px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+body.open-comments {
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+
+  .comments {
+    -webkit-transform: translate(200%, 0);
+    transform: translate(200%, 0);
+  }
+}
+
+/* ==============================================================================
+	7. Author
+=================================================================================*/
+.author {
+  position: relative;
+  padding: 3rem 0;
+  overflow: hidden;
+
+  &:nth-child(even) {
+    background: @grey_light;
+  }
+
+  .author-image {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    padding-bottom: 20%;
+    border-radius: 100%;
+    margin-right: 5%;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    @media screen and (max-width: 800px) {
+      display: block;
+      width: 36%;
+      padding-bottom: 36%;
+      margin: 0 32% 1rem;
+    }
+  }
+
+  .author-info {
+    display: inline-block;
+    float: left;
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      line-height: 1.6rem;
+      text-align: justify;
+    }
+
+    @media screen and (min-width: 800px) {
+      width: 75%;
+      vertical-align: top;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
+
+      a {
+        text-align: center;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 100%;
+    }
+  }
+}
+
+/* ==============================================================================
+	8. Pagination
+=================================================================================*/
+.pagination {
+  position: relative;
+  text-align: center;
+
+  .article-item;
+
+  .older-posts,
+  .newer-posts {
+    .button;
+    background: transparent;
+
+    @media screen and (max-width: 800px) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .page-number {
+    position: absolute;
+    display: block;
+    font-weight: 700;
+    width: 100%;
+    left: 0;
+    bottom: 2rem;
+
+    @media screen and (max-width: 800px) {
+      bottom: 1rem;
+    }
+  }
+}
+/* ==============================================================================
+	9. Transitions
+=================================================================================*/
+.transition(@duration, @timing) {
+  -webkit-transition: @duration @timing;
+  -moz-transition: @duration @timing;
+  -o-transition: @duration @timing;
+  transition: @duration @timing;
+}
+
+.transition(@property, @duration, @timing) {
+  -webkit-transition: @property @duration @timing;
+  -moz-transition: @property @duration @timing;
+  -o-transition: @property @duration @timing;
+  transition: @property @duration @timing;
+}
+
+.transition(@property, @duration, @timing, @delay) {
+  -webkit-transition: @property @duration @timing @delay;
+  -moz-transition: @property @duration @timing @delay;
+  -o-transition: @property @duration @timing @delay;
+  transition: @property @duration @timing @delay;
+}
+
+.transition-delay(@delay) {
+  -webkit-transition-delay: @delay;
+  -moz-transition-delay: @delay;
+  -o-transition-delay: @delay;
+  transition-delay: @delay;
+}
+/* ==============================================================================
+	10. Colors
+=================================================================================*/
+@text_color: #555;
+@heading_color: #444;
+@grey_light: #f7f7f7;
+/* ==============================================================================
+	End
+=================================================================================*/
+
+/* ==============================================================================
+	11.  Instagram
+=================================================================================*/
+#instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: -0.5vw;
+  margin-left: -0.5vw;
+  margin-right: -0.5vw;
+}
+@media screen and (max-width: 600px) {
+  #instagram {
+    margin-top: 15px;
+    margin-left: -5.5vw;
+    margin-right: -5.5vw;
+  }
+}
+#instagram:hover a {
+  opacity: 0.8;
+}
+#instagram a {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 33.33333%;
+  flex-basis: 33.33333%;
+  line-height: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  border: 0.5vw solid transparent;
+}
+@media screen and (min-width: 1450px) {
+  #instagram a {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  #instagram a {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #instagram a {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+  }
+}
+@media screen and (max-width: 750px) {
+  #instagram a {
+    -ms-flex-preferred-size: 33.33333%;
+    flex-basis: 33.33333%;
+  }
+}
+#instagram a:hover {
+  opacity: 1;
+}
+#instagram img {
+  width: 100%;
+}

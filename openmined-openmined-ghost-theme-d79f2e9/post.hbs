@@ -1,0 +1,75 @@
+{{!< default}}
+
+{{# post }}
+
+{{> header }}
+{{> subscribe }}
+
+<div id="content" class="container">
+  <div class="row post">
+    <div class="column small-12">
+      {{ content }}
+    </div>
+  </div>
+  {{# is "post" }}
+  <div class="row authors">
+    <div class="column small-12 large-8 xlarge-6">
+      <ul>
+        <li>This post was written by:</li>
+        {{# foreach authors }}
+          <li>
+            <a href="{{ url }}">
+              <div class="author-avatar">
+                {{# if profile_image }}
+                  <div style="background-image: url({{ profile_image }});"></div>
+                {{ else }}
+                  <div style="background-image: url({{ asset "images/avatar.svg" }});"></div>
+                {{/ if }}
+              </div>
+              <div class="metadata">
+                <h4>{{ name }}</h4>
+                <p>{{ bio }}
+              </div>
+            </a>
+          </li>
+        {{/ foreach }}
+      </ul>
+    </div>
+  </div>
+  <div class="row prev-next">
+    {{#next_post}}
+      <div class="column small-12 large-6 xlarge-4">
+        <h5>Previous post</h5>
+        {{> post-card condensed="true" }}
+      </div>
+    {{/next_post}}
+    {{#prev_post}}
+      <div class="column small-12 large-6 xlarge-4">
+        <h5>Next post</h5>
+        {{> post-card condensed="true" }}
+      </div>
+    {{/prev_post}}
+  </div>
+  <div class="row comments">
+    <div class="column small-12 large-8 large-offset-2">
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = '{{ url absolute="true" }}';
+          this.page.identifier = 'ghost-{{ comment_id }}';
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://openmined.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    </div>
+  </div>
+  {{/ is }}
+</div>
+
+{{/ post }}
+
+<script src="{{asset "js/prism.js"}}"></script>

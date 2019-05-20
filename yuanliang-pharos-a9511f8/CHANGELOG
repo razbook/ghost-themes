@@ -1,0 +1,3 @@
+v1.0.1
+------------------------------------------
+- Add jQuery (1.11.3), because it's removed from {{ghost_foot}} in Ghost 0.7.0

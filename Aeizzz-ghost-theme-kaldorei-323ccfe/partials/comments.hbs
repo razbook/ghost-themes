@@ -1,0 +1,17 @@
+<section class="post comments">
+    <div id="disqus_thread"></div>  
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">  
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>  
+    <script>  
+    var gitment = new Gitment({  
+    id: '页面 ID', // 可选。默认为 location.href
+    owner: 'hong-ll',
+    repo: 'file',
+    oauth: {
+        client_id: 'da48042251ee6b07ad2d',
+        client_secret: '42b6b06996d1586b41c810cecd060ae39b5711ca',
+    },
+    })
+    gitment.render('disqus_thread')  
+    </script>  
+</section>

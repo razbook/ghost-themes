@@ -1,0 +1,56 @@
+{
+  "name": "openmined-ghost-theme",
+  "description": "The theme for the OpenMined blog.",
+  "demo": "https://blog.openmined.org",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=1.2.0"
+  },
+  "license": "Apache-2.0",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "zip": "gulp zip"
+  },
+  "author": {
+    "name": "Patrick Cason",
+    "email": "me@patrickcason.com",
+    "url": "https://www.patrickcason.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal"
+    ]
+  },
+  "keywords": [
+    "openmined",
+    "theme",
+    "ghost-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenMined/openmined-ghost-theme.git"
+  },
+  "bugs": "https://github.com/OpenMined/openmined-ghost-theme/issues",
+  "contributors": "https://github.com/OpenMined/openmined-ghost-theme/graphs/contributors",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-livereload": "3.8.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-util": "3.0.7",
+    "gulp-watch": "4.3.8",
+    "gulp-zip": "4.0.0"
+  },
+  "config": {
+    "posts_per_page": 24
+  },
+  "dependencies": {
+    "normalize-scss": "^7.0.1",
+    "openmined-ui": "^0.0.6"
+  }
+}

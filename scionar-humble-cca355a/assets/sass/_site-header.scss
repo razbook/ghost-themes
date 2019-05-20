@@ -1,0 +1,43 @@
+@import 'variables';
+
+.site-header {
+  background-color: $color__white--95;
+  border-bottom: 1px solid $color__black--075;
+  box-shadow: 0 5px 15px $color__black--05;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 1;
+}
+
+.site-header__content {
+  @include center-wrapper;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.site-header__logo {
+  display: block;
+  height: 2rem;
+}
+
+.site-header__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header__title {
+  display: inline-block;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.site-header__description {
+  text-align: center;
+  margin: 0;
+  font-size: 0.8rem;
+}

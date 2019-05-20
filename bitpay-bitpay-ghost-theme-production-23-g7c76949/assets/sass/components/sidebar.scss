@@ -1,0 +1,72 @@
+//
+// Sidebar Page
+// --------------------------------------------------
+
+
+.sidebar-item {
+  margin-top: 3em;
+  padding-left: 1em;
+}
+
+.sidebar-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  color: #8A8A8A;
+  letter-spacing: 1px;
+  line-height: 17px;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+
+
+.sidebar-categories {
+  a {
+    text-decoration: none;
+    color: #546FB4;
+  }
+  ul {
+    padding-left: 0;
+  }
+  li {
+    margin: 0em 0;
+    list-style-type: none;
+  }
+}
+
+
+.sidebar-about {
+  p {
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+  color: rgba(121,121,121,0.90);
+  line-height: 28.5px;
+  }
+}
+
+
+.sidebar-social {
+  ul {
+    text-align: justify;
+    padding-left: 0;
+  }
+  ul:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+  }
+  ul:before {
+      content: '';
+      display: block;
+      margin-top: -1.25em;
+  }
+  li {
+      color: #fff;
+      display: inline-block;
+      font: 1em/1.5 sans-serif;
+      margin-right: -.25em;
+      padding: 0em;;
+      position: relative;
+      top: 1.25em;
+  }
+}

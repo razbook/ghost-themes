@@ -1,0 +1,44 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{navigation}}
+
+<section class="author-profile inner">
+    {{#if author.profile_image}}
+	    <div class="row">
+		    <figure class="small-8 columns author-image">
+		        <div class="img" style="background-image: url({{author.profile_image}})">
+		        </div>
+		    </figure>
+	    </div>
+    {{/if}}
+
+    <h1 class="author-title">{{author.name}}</h1>
+
+	{{#if author.bio}}
+	    <div class="row">
+		    <p class="small-10 large-10 small-centered large-centered columns author-bio">
+		    	{{author.bio}}
+		    </p>
+	    </div>
+    {{/if}}
+
+    <div class="author-meta">
+        {{#if author.location}}
+        	<i class="icon-location"></i>
+	        {{author.location}}
+        {{/if}}
+        {{#if author.website}}
+        	<i class="icon-site"></i>
+        	<a href="{{author.website}}">Website</a>
+        {{/if}}
+        <i class="icon-stats"></i>
+        {{plural pagination.total empty='No posts' singular='% post' plural='% posts'}}
+    </div>
+</section>
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+    {{! The tag below includes the post loop - partials/loop_no_author.hbs. NOTE - this loop doesn't have the author after the post date, due to redundancy}}
+    {{> "loop_no_author"}}
+</main>

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg">
+    {{#if @blog.logo}}
+        <a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" height="37.5"/></a>
+    {{else}}
+        <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
+    {{/if}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+            <!-- Loop through the navigation items -->
+            {{#foreach navigation}}
+            <li class="nav-item nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+            <!-- End the loop -->
+        </ul>
+    </div>
+</nav>

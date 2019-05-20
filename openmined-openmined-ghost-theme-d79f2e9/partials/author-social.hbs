@@ -1,0 +1,17 @@
+<ul class="author-social">
+  {{# if facebook }}
+    <li><a href="{{ facebook }}" target="_blank" rel="noopener">
+      <img src="{{ asset "images/facebook.svg" }}" alt="Facebook" />
+    </a></li>
+  {{/ if }}
+  {{# if twitter }}
+    <li><a href="{{ twitter }}" target="_blank" rel="noopener">
+      <img src="{{ asset "images/twitter.svg" }}" alt="Twitter" />
+    </a></li>
+  {{/ if }}
+  {{# if website }}
+    <li><a href="{{ website }}" target="_blank" rel="noopener">
+      <img src="{{ asset "images/website.svg" }}" alt="Website" />
+    </a></li>
+  {{/ if }}
+</ul>

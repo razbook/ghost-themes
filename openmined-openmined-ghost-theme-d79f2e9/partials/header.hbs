@@ -1,0 +1,70 @@
+<div id="header">
+  {{# if feature_image }}
+    <div class="background feature-image" style="background-image: url({{ feature_image }});"></div>
+  {{ else }}
+    <div class="background"></div>
+  {{/ if }}
+  <div class="container">
+    <div class="row">
+      <div class="column small-12 header">
+        <a href="{{ @blog.url }}" class="header-logo">
+          <img src="{{ asset "images/logo.svg" }}" alt="OpenMined" />
+        </a>
+        {{> social-media }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="column small-12 medium-10 large-8 xlarge-6 header-content">
+        <div class="avatar-title-subscribe">
+          {{# if profile_image }}
+            <div class="author-avatar">
+              <div style="background-image: url({{ profile_image }})"></div>
+            </div>
+          {{/ if }}
+          <h1 class="title heading">
+            {{# is "index" }}
+              {{ @blog.title }}
+            {{/ is }}
+            {{# is "page, post" }}
+              {{ title }}
+            {{/ is }}
+            {{# is "tag, author" }}
+              {{ name }}
+            {{/ is }}
+          </h1>
+          {{# is "index, tag, author" }}
+            <a href="https://feedly.com/i/subscription/feed/{{ url absolute="true" }}rss/" class="subscribe" target="_blank" rel="noopener">
+              <img src="{{ asset "images/rss.svg" }}" alt="Subscribe" />
+            </a>
+          {{/ is }}
+          {{# is "page, post" }}
+            <a href="https://feedly.com/i/subscription/feed/{{ @blog.url }}/rss/" class="subscribe" target="_blank" rel="noopener">
+              <img src="{{ asset "images/rss.svg" }}" alt="Subscribe" />
+            </a>
+          {{/ is }}
+        </div>
+        </h1>
+        <div class="excerpt">
+          {{# is "index" }}
+            {{ @blog.description }}
+          {{/ is }}
+          {{# is "page" }}
+            {{ excerpt }}
+          {{/ is }}
+          {{# is "post" }}
+            Posted on {{ date format="MMMM Do, YYYY" }} under {{# primary_tag }}<a href="{{ url }}">{{ name }}</a>{{/ primary_tag }}
+          {{/ is }}
+          {{# is "tag" }}
+            {{ description }}
+          {{/ is }}
+          {{# is "author" }}
+            {{ bio }}
+          {{/ is }}
+        </div>
+        {{# is "author" }}
+          {{> author-social }}
+        {{/ is }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{#is "page"}}
+
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main posts-outer-container">
+    {{#post}}
+    <div class="contact-container">
+
+        <div style="background: url({{@site.cover_image}}) no-repeat center center;" class="contact-header">
+            <div class="contact-picture">
+                <img src="{{feature_image}}">
+            </div>
+        </div>
+        <div class="contact-content">
+            <h1>About Me</h1>
+            {{content}}
+            <div onclick="" class="contact-copy-container">
+                <h1>Email:</h1>
+                <div class="contact-copy">
+                    <button class="copybtn js-emailcopybtn">Copy</button>
+                    <div class="copytext-container">
+                        <p class="copytext js-emaillink">walker@urdev.xyz</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="" class="contact-copy-container">
+                <h1>Phone:</h1>
+                <div class="contact-copy">
+                    <button class="copybtn js-phonecopybtn">Copy</button>
+                    <div class="copytext-container">
+                        <p class="copytext js-phonelink">404-901-3447</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{/post}}
+
+
+    <div class="post-container">
+        <h1 class="post-scroll-title">All Posts</h1>
+        <div class="post-scroll">
+            {{#get "posts" limit="all" filter="featured:false"}}
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+
+    {{> footer }}
+
+</main>
+{{/is}}

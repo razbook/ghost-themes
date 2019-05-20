@@ -1,0 +1,16 @@
+<div class="col-12 pagination">
+  <div class="col-6 newer">
+    {{#if prev}}
+      <a class="newer-posts" href="{{page_url prev}}">&larr; Newer Posts</a>
+    {{else}}
+      <p>Nothing newer</p>
+    {{/if}}
+  </div>
+  <div class="col-6 older">
+    {{#if next}}
+      <a class="older-posts" href="{{page_url next}}">Older Posts &rarr;</a>
+    {{else}}
+      <p>Nothing older</p>
+    {{/if}}
+  </div>
+</div>

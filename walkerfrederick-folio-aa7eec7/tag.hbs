@@ -1,0 +1,27 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+<main id="site-main" class="site-main posts-outer-container">
+    <div class="post-container">
+        {{#tag}}
+        <h1 class="post-scroll-title">{{name}}</h1>
+        {{/tag}}
+
+        <div class="post-scroll">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+        </div>
+
+            <h1 class="post-scroll-title">All Posts</h1>
+            <div class="post-scroll">
+                {{#get "posts" limit="all" filter="featured:false"}}
+                    {{#foreach posts}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                {{/get}}
+            </div>
+    </div>
+
+    {{> footer }}
+
+</main>

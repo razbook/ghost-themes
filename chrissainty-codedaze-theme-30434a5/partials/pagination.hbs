@@ -1,0 +1,19 @@
+<div class="pagination">
+    <div class="row margin-bottom-2rem">
+        <div class="column text-center">
+            <span class="page-number">Page {{page}} of {{pages}}</span>
+        </div>
+    </div>
+    <div class="row">
+        {{#if prev}}
+        <div class="column">
+            <a class="button button-outline display-block" href="{{page_url prev}}"><span aria-hidden="true">&larr;</span> Newer Posts</a>
+        </div>
+        {{/if}}
+        {{#if next}}
+        <div class="column">
+            <a class="button button-outline display-block" href="{{page_url next}}">Older Posts <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        {{/if}}
+    </div>
+</div>

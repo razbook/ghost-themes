@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "main/css/main.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+<body class="is-preload {{body_class}}">
+
+    <div id="wrapper">
+        <main id="main">
+            <div class="inner">
+
+                {{!-- Header --}}
+                <header id="header">
+                    {{#if @site.logo}}
+                        <a href="{{@site.url}}" class="logo image"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                    {{else}}
+                        <a href="{{@site.url}}" class="logo">{{@site.title}}</a>
+                    {{/if}}
+                    <ul class="icons">
+                        {{#if @site.twitter}}
+                            <li><a href="{{twitter_url @site.facebook}}" class="icon fa-twitter" title="Twitter"><span class="label">Twitter</span></a></li>
+                        {{/if}}
+                        {{#if @site.facebook}}
+                            <li><a href="{{facebook_url @site.facebook}}" class="icon fa-facebook" title="Facebook"><span class="label">Facebook</span></a></li>
+                        {{/if}}
+                        <li><a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+                    </ul>
+                </header>
+
+                {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+                {{{body}}}
+
+            </div>
+        </main>
+
+        {{!-- The left sidebar - partials/sidebar.hbs --}}
+        {{> sidebar}}
+
+    </div>
+
+    {{!-- Theme Scripts --}}
+    <script src="{{asset "main/js/jquery.min.js"}}"></script>
+    <script src="{{asset "main/js/browser.min.js"}}"></script>
+    <script src="{{asset "main/js/breakpoints.min.js"}}"></script>
+    <script src="{{asset "main/js/util.js"}}"></script>
+    <script src="{{asset "main/js/main.js"}}"></script>
+
+    {{!-- Ghost outputs important scripts & data with the {ghost_foot} tag
+    it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{{!< default}}
+
+{{! The big cover on the left }}
+<aside class="cover" 
+	{{#if tag.feature_image}} 
+	    style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{tag.feature_image}});"
+	{{else}}
+		{{#if @blog.cover_image}} 
+		    style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{@blog.cover_image}});"
+        {{/if}}
+	{{/if}}>	
+	<div class="cover-content">
+		<div class="container">
+		    {{#if @blog.logo}}
+            <div class="cover-logo">
+               <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="small-logo"></a> 
+            </div>            
+            {{/if}}
+			<h1 class="cover-headline">#{{tag.name}}</h1>
+			<p class="cover-text">{{tag.description}}</p>
+		</div>		
+	</div>
+	{{! The tag below includes social links on the left - partials/social-links.hbs }}	
+	{{> social-links}}
+</aside>
+
+{{! The main content area of the page on the right with list of posts selected by the tag }}
+<main class="content">
+   {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> loop}}
+</main>

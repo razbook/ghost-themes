@@ -1,0 +1,44 @@
+<section id="side-bar" class="column">
+
+    <div class="author">
+        <img src="{{asset "img/profile-image.jpg"}}" alt="Chris Sainty" />
+        <h3>Chris Sainty</h3>
+        <p>Talking about Blazor & ASP.NET Core</p>
+    </div>
+
+    {{#get "posts" limit="5" as |recents|}}
+    <section class="recent-posts">
+      <h3>Recent posts</h3>
+      <ul>
+        {{#foreach recents}}
+        <li>
+          <a href="{{url}}">{{title}}</a>
+          <div class="read-time">{{reading_time}}</div>
+        </li>
+        {{/foreach}}
+      </ul>
+    </section>
+    {{/get}}
+
+    <section class="social">
+      <h3>Follow Me</h3>
+      <div class="social-links">
+        <a class="icon-twitter" href="https://twitter.com/chris_sainty" target="_blank" rel="noreferrer" title="Twitter"></a>
+        <a class="icon-github" href="https://github.com/chrissainty" target="_blank" rel="noreferrer" title="Fork me on Github"></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/in/chris-sainty" rel="noreferrer" target="_blank" title="LinkedIn"></a>
+        <a class="icon-rss" href="{{@blog.url}}/rss/" target="_blank" title="RSS Feed"></a>
+      </div>
+    </section>
+
+    {{#get "tags" limit="all" include="count.posts" order="name asc"}}
+    <section class="categories">
+      <h3>Categories</h3>
+      <ul>
+          {{#foreach tags}}
+              <li><a href="{{url}}">{{name}}</a> <span>{{count.posts}}</span></li>
+          {{/foreach}}
+      </ul>
+    </section>
+    {{/get}}  
+
+  </section>

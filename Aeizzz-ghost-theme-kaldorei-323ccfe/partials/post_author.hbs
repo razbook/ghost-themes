@@ -1,0 +1,23 @@
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+{{#if profile_image}}
+<figure class="author-image">
+    <a class="img" href="{{url}}" style="background-image: url({{img_url profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
+</figure>
+{{/if}}
+{{/author}}
+<figure class="author-info">
+    <section class="author-info-title">
+        <span><time class="post-date pull-right" datetime="{{date format='YYYY-MM-DD'}}">发表于：{{date format="YYYY-MM-DD"}}</time></span>
+        {{#author}}
+        <span>作者：{{name}}</span>
+    </section>
+    <section class="author-info-content">
+        {{#if bio}}
+            <span class="author-info-bio">{{bio}}</span>
+        {{else}}
+            <p>查看此作者的 <a href="{{url}}">更多文章</a> 。</p>
+        {{/if}}
+        {{/author}}
+    </section>
+</figure>

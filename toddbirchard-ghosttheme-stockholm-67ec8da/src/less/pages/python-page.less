@@ -1,0 +1,37 @@
+.page-python-packages {
+
+  section {
+        width: -webkit-fill-available;
+  }
+  table {
+    td {
+      white-space: nowrap;
+      max-width: 200px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    tbody {
+      tr {
+        td:first-of-type {
+          text-align: center;
+        }
+
+        .summmary {
+          font-weight: 600 !important;
+          font-size: .85em !important;
+        }
+
+        .issuetype-name {
+          font-size: .7em !important;
+          min-width: 100px;
+        }
+
+        &.Epic {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{{!< default}}
+
+{{! The big cover on the left }}
+<aside class="cover" 
+    {{#if @blog.cover_image}} 
+        style="background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url({{@blog.cover_image}});"
+    {{/if}}>	
+	<div class="cover-content">
+		<div class="container">
+		    {{#if @blog.logo}}
+            <div class="cover-logo">
+               <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="big-logo"> 
+            </div>            
+            {{else}}
+            <h1 class="cover-headline">{{@blog.title}}</h1>
+            {{/if}}			
+			<p class="cover-text">{{@blog.description}}</p>
+		</div>		
+	</div>
+	{{! The tag below includes social links on the left - partials/social-links.hbs }}	
+	{{> social-links}}
+</aside>
+
+{{! The main content area on the homepage on the right }}
+<main class="content">
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+	{{> loop}}
+</main>

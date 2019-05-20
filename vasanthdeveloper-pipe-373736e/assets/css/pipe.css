@@ -1,0 +1,123 @@
+/* Bootstrap 4 Adjustments */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+/* Custom CSS */
+
+.blog-logo {
+	max-height: 27px;
+}
+
+.posts-heading {
+	font-size: 2em;
+}
+
+article {
+	margin-bottom: 3em;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.box-shadow-top { box-shadow: 0 -0.25rem .75rem rgba(0, 0, 0, .05); }
+
+#footer {
+	padding-top: 1.8em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 0.8em;
+}
+
+#posts-listing {
+	min-height: 61.2vh;
+}
+
+#footer svg {
+	margin-right: 1.5em;
+}
+
+#sub-link {
+	margin-right: 2em;
+}
+
+#pagination {
+	padding-bottom: 4em;
+}
+
+#pagination-text {
+	padding-right: 2em;
+	padding-left: 2em;
+}
+
+.post-container {
+	min-height: 61.2vh;
+	margin-top: 7em;
+	margin-bottom: 2em;
+}
+
+.post-container img {
+	max-width: 58.1em;
+}
+
+.post-container pre {
+	background-color: #f9f9f9;
+	padding: 1em;
+	border-radius: 0.25em;
+}
+
+.post-container mark {
+	background-color: #007bff;
+	color: white;
+	padding-top: 0.50em;
+	padding-bottom: 0.50em;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	border-radius: 0.25em;
+}
+
+.post-container ul li mark {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+.post-heading {
+	font-size: 3em;
+}
+
+.post-image {
+	max-width: 58.1em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border-radius: 0.22em;
+}
+
+.social-buttons svg {
+	margin-right: 1em;
+	margin-top: 1.5em;
+	font-size: 1em;
+	margin-bottom: 1em;
+}

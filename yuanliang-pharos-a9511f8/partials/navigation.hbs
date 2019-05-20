@@ -1,0 +1,22 @@
+{{! Blog navigation }}
+<span class="toggle-navigation"></span>
+
+<nav class="navigation">
+	<ul>
+	    {{#foreach navigation}}
+	    <li class="nav-{{slug}} {{#if current}}nav-current{{/if}}" role="presentation">
+	        <a href="{{url absolute="true"}}">{{label}}</a>
+	    </li>
+	    {{/foreach}}
+	    
+	    {{! You can also manually paste navigation links bellow here 
+	        if your version of Ghost doesn't support built-in (dynamic) navigation
+	        For example:
+	    
+	    <li role="presentation">
+	        <a href="NAVIGATION_ITEM_LINK">NAVIGATION_ITEM_NAME</a>
+	    </li>
+	    
+	    }}
+	</ul>
+</nav>

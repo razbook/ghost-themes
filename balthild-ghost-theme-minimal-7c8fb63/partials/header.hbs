@@ -1,0 +1,12 @@
+<header class="header">
+    <section class="meta">
+        <h1 class="brand"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <p>{{@blog.description}}</p>
+    </section>
+
+    <nav class="site-nav">
+        {{#if @blog.navigation}}
+            {{navigation}}
+        {{/if}}
+    </nav>
+</header>

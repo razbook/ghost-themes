@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{ meta_title }}</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ asset "built/app.css" }}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset "css/prism.css" }}" />
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  {{ ghost_head }}
+</head>
+<body class="{{ body_class }}">
+  <div id="app">
+    {{{ body }}}
+  </div>
+
+  {{# if pagination.pages }}
+    <script>
+      // maxPages is a global variable that is needed to determine
+      // if we need to load more pages for the infinitescroll, or if
+      // we reached the last page already.
+      var maxPages = parseInt('{{ pagination.pages }}');
+    </script>
+  {{/ if }}
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+  <script>
+    MathJax.Hub.Config({
+      jax: ['input/TeX', 'output/HTML-CSS'],
+      extensions: ['tex2jax.js'],
+      tex2jax: {
+        inlineMath: [ ['\\(','\\)'] ],
+        displayMath: [ ['$$','$$'] ]
+      }
+    });
+  </script>
+
+  <script src="{{ asset "js/app.js" }}"></script>
+
+  {{ ghost_foot }}
+</body>
+</html>

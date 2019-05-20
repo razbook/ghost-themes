@@ -1,0 +1,183 @@
+.post-content {
+  margin-top: 2.5rem;
+  margin-bottom: 4rem; }
+  .post-content p {
+    font-size: 1.1rem; }
+
+@media only screen and (max-device-width: 768px) {
+  .post-content {
+    padding-left: 1.3rem;
+    padding-right: 1.3rem; } }
+
+.post {
+  margin-bottom: 2rem; }
+  .post img {
+    max-height: 35rem;
+    display: block;
+    margin: auto auto; }
+
+.page-description {
+  font-size: 1.1rem; }
+
+.post-meta {
+  margin-top: 2rem; }
+
+.blog-logo img {
+  width: 10rem; }
+
+img.author-thumb {
+  width: 2.5rem;
+  border-radius: 50%; }
+
+.post-loop {
+  margin-top: 5rem; }
+  .post-loop .post {
+    border-bottom: 1px dashed #aaa;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    margin: 1rem auto; }
+    .post-loop .post .post-title {
+      font-weight: bold;
+      font-size: large;
+      margin-right: 0.5rem; }
+
+.pagination {
+  margin-top: 3rem; }
+
+h1, h2, h3, h4, h5, h6, .post-title {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+body {
+  font-family: 'Lora', 'Times New Roman', Times, serif !important;
+  font-weight: 400;
+  background-color: #fefefe; }
+
+a {
+  color: #00807a; }
+
+code {
+  font-size: small; }
+
+pre {
+  margin-bottom: 1.3rem;
+  overflow: visible; }
+
+blockquote {
+  padding-top: 1.1rem;
+  padding-bottom: 0.1rem; }
+
+.label {
+  background-color: #00807a;
+  border: 1px solid #fefefe;
+  font-size: 1.3rem; }
+
+@media only screen and (min-device-width: 768px) {
+  .label {
+    font-size: 0.9rem; } }
+
+.label:hover {
+  background-color: #fff;
+  color: #00807a;
+  border: 1px solid #00807a; }
+
+.main-nav {
+  margin-top: 0.5rem; }
+  .main-nav li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.3rem 0.5rem; }
+    .main-nav li a {
+      font-size: large;
+      text-transform: capitalize; }
+
+.site-footer {
+  background-color: #222;
+  color: #AAA;
+  height: 15rem;
+  font-size: large;
+  margin-top: 2rem;
+  padding: 2rem; }
+  .site-footer .copyright {
+    margin-top: 4rem;
+    margin-bottom: 0.7rem; }
+
+* {
+  margin: 0; }
+
+html, body {
+  height: 100%; }
+
+.content-wrapper {
+  min-height: 100%;
+  margin-bottom: -15rem; }
+
+.content-wrapper:after {
+  content: "";
+  display: block;
+  height: 15rem; }
+
+.share ul {
+  margin-top: 1rem; }
+.share li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 2rem; }
+
+#instantclick {
+  display: none; }
+
+.columns {
+  float: none; }
+
+.related-posts-wrapper p {
+  margin-bottom: 0.5rem; }
+.related-posts-wrapper ul {
+  list-style-type: none;
+  margin-left: 0rem; }
+  .related-posts-wrapper ul li {
+    margin-left: 0.5rem; }
+    .related-posts-wrapper ul li a {
+      text-transform: uppercase;
+      font-size: large; }
+
+section.comments {
+  margin-top: 2.5rem; }
+
+/* === All styles related to the author page, /author/author-name. === */
+.author-profile {
+  text-align: center;
+  margin-bottom: -4rem; }
+
+/* head shot*/
+.author-image {
+  width: 20rem;
+  margin: 0 auto; }
+
+.author-image .img {
+  margin: 0 auto;
+  height: 20rem;
+  background-size: cover;
+  background-position: center center;
+  border: 1px solid #00807a; }
+
+.author-image .img .hidden {
+  display: none; }
+
+/* 200 char blurb*/
+.author-bio {
+  color: #444;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-indent: 0; }
+
+/* site, location, post count. */
+.author-meta {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  /* for separating out the author from posts */
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #aaa; }

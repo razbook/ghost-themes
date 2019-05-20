@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        {{! Document Settings }}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {{! Page Meta }}
+        <title>{{@blog.title}}</title>
+        <meta name="description" content="{{@blog.description}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+        <link rel="manifest" href="/manifest.json"></link>
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{asset "css/codedaze.min.css"}}">
+        {{ghost_head}}
+        <script src="{{asset "js/vendor/modernizr-2.8.0.min.js"}}"></script>
+    </head>
+    <body class="post">
+
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        {{>header}}
+
+        {{#post}}
+
+        <div class="container margin-bottom-2rem post-container">
+            <div class="row">
+                <div id="main" class="column">
+                
+                    <article class="blogpost {{post_class}}">
+                        {{#primary_tag}}
+                            <span class="primary-tag">{{name}}</span>
+                        {{/primary_tag}}
+                        <h1>
+                            {{title}}</a>
+                        </h1>
+
+                        <div class="row post-info">
+                            <div class="column published">
+                                <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="Do MMMM YYYY"}}</time>
+                            </div>
+                            <div class="column read-time">
+                                {{reading_time}}
+                            </div>
+                            <div class="column share">
+                                <span>Share On</span>
+                                <ul>
+                                    <li><a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a></li>
+                                    <li><a class="icon-twitter"  href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this page"></a></li>
+                                    <li><a class="icon-gplus"  href="https://plus.google.com/share?url={{url absolute="true"}}"
+                                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"></a></li>
+                                    <li><a class="icon-linkedin"  href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on LinkenIn"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        {{content}}
+                        
+                        <div class="share-buttons meta-info">
+                            <span>Share On</span>
+                            <ul>
+                                <li><a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a></li>
+                                <li><a class="icon-twitter"  href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this page"></a></li>
+                                <li><a class="icon-gplus"  href="https://plus.google.com/share?url={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"></a></li>
+                                <li><a class="icon-linkedin"  href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on LinkenIn"></a></li>
+                            </ul>
+                        </div>
+                    
+                    </article>
+
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = '{{url absolute="true"}}';
+                            this.page.identifier = 'ghost-{{comment_id}}';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://codedaze.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </div>
+
+                {{> sidebar}}
+            </div>
+        </div> 
+
+        <div class="read-next">
+            {{#next_post}}
+            <a class="next-story" href="{{url}}">
+                <section>
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt characters="100"}}&hellip;</p>
+                </section>
+            </a>
+            {{/next_post}}
+            
+            {{#prev_post}}
+            <a class="prev-story" href="{{url}}">
+                <section>
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt characters="100"}}&hellip;</p>
+                </section>
+            </a>
+            {{/prev_post}}
+        </div>
+
+        {{/post}}
+
+        {{>footer}}
+
+        {{ghost_foot}}
+
+        {{>scripts}}
+    </body>
+</html>

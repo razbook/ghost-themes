@@ -1,0 +1,9 @@
+<!-- start post -->
+{{#foreach posts}}
+		{{#if featured}}
+			{{> featuredpostpreview}}
+		{{else}}
+			{{> postpreview}}
+		{{/if}}
+{{/foreach}}
+<!-- end post -->

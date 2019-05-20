@@ -1,0 +1,35 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+<article class="article-item" role="article" itemscope itemtype="//schema.org/Article">
+	<h1 class="article-item-headline" itemprop="headline">
+		<a href="{{{url}}}" rel="bookmark">
+			{{title}}
+		</a>
+	</h1>
+
+	{{#if tags}}
+	<div class="article-item-tag" itemprop="tag">&mdash; {{tags separator=", "}} &mdash;</div> {{else}} <hr>
+	{{/if}}
+
+	<div class="article-item-body" itemprop="articleBody">
+		{{excerpt characters="140"}}
+	</div>
+
+	{{#author}}
+	<a href="{{url}}" class="article-item-author"
+	{{#if featur_image}} style="background-image: url({{img_url feature_image}});" title="{{name}}" itemprop="author">
+	{{else}} style="width: 100%; height: auto; text-align: center;">{{name}}
+	{{/if}}
+	</a>
+	{{/author}}
+
+	<time class="article-item-time" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+		<strong>
+			{{date format=' MMMM'}} {{date format='DD'}}, {{date format=' YYYY'}}
+		</strong>
+	</time>
+</article>
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

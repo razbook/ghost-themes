@@ -1,0 +1,33 @@
+<footer>
+    <div class="footer">
+        <div class="footer-col footer-pages">
+            <h1>Pages</h1>
+            <ul>
+                {{#if @blog.navigation}}
+                    {{navigation}}
+                {{/if}}
+            </ul>
+        </div>
+
+        <div class="footer-col footer-socials">
+            <h1>Follow Me</h1>
+            <ul>
+                <li><a target="_blank" href="https://github.com/WalkerFrederick">GitHub</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/walker-frederick-9a2396141/">LinkedIn</a></li>
+                <li><a target="_blank" href="https://twitter.com/WFrederickTweet">Twitter</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/walkerthomasfrederick/">Instagram</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+            <h1>Contact Me</h1>
+            <ul>
+                <li>Email: <a target="_blank" href="mailto:walker@urdev.xyz">walker@urdev.xyz</a></li>
+                <li>Phone: 404-901-3447</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <span><a href="https://walkerfrederick.com">Developed by Walker Frederick</a> | <a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</span>
+    </div>
+</footer>

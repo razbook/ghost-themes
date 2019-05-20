@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta content=always name=referrer>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimal-ui"/>
+    <meta itemprop="name" content="{{meta_title}}{{#is "post"}} - {{@blog.title}}{{/is}}" />
+    {{#is "post"}}
+    {{#post}}
+    {{#if feature_image}}
+    <meta itemprop="image" content="{{img_url feature_image}}" />
+    {{else}}
+    <meta itemprop="image" content="{{@blog.logo}}"/>
+    {{/if}}
+    <meta itemprop="description" content="{{excerpt words="11"}}" />
+    {{/post}}
+    {{else}}
+    <meta itemprop="image" content="{{@blog.logo}}"/>
+    <meta itemprop="description" content="{{meta_description}}" />
+    {{/is}}
+    {{ghost_head}}
+    <title>{{meta_title}}{{#is "post"}} - {{@blog.title}}{{/is}}</title>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/base.css"}}">
+</head>
+
+<body>
+<div class="surface-content {{body_class}}">
+    <header class="site-header u-textAlignCenter container{{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{/if}}">
+        <div class="header-inner">
+            <h1 class="site-title">
+                <a href="http://zhelin.me" title="{{@blog.title}}">折口木木</a>
+            </h1>
+            <p class="site-description">我认真的样子像天桥下贴膜的小哥</p>
+            <div class="social-links">
+                <a href="http://weibo.com/czhelin" class="social-link iconfont icon-weibo"></a>
+                <a href="https://github.com/ZhelinCheng" class="social-link iconfont icon-github"></a>
+                {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" class="social-link iconfont icon-twitter"></a>{{/if}}
+                {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" class="social-link iconfont icon-facebook"></a>{{/if}}
+                <a href="" id="j-btn-search" class="social-link iconfont icon-sousuo"></a>
+            </div>
+            <div class="">
+                <form role="search" id="j-form-search" method="get" class="search-form" action="//zhelin.me/">
+                    <label>
+                        <span class="screen-reader-text">搜索：</span>
+                        <input type="search" class="search-field" placeholder="暂无搜索功能" value="" name="s"/>
+                    </label>
+                    <input type="submit" class="search-submit" value="搜索"/>
+                </form>
+            </div>
+        </div>
+    </header>
+    <nav class="topNav u-textAlignCenter container">
+        <div class="layoutSingleColumn">
+            {{navigation}}
+        </div>
+    </nav>
+    <main class="main-content container">
+        {{{body}}}
+        {{#is "post"}}
+        <div id="SOHUCS" sid="{{url}}" ></div> 
+        <script type="text/javascript"> 
+        (function(){ 
+        var appid = 'cysUripYx'; 
+        var conf = 'prod_b5b57364f383ad79682c901ac76467e4'; 
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        if (width < 960) { 
+        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+        {{/is}}
+    </main>
+    <footer class="site-footer u-textAlignCenter container">
+        <a href="{{@blog.url}}" target="_blank">zhelin.me</a> {{date format="YYYY"}} <a href="" class="iconfont icon-aixin"></a> engine by <a href="//ghost.org" target="_blank" rel="nofollow">ghost</a>
+        <p><a href="http://www.miitbeian.gov.cn" rel="nofollow">蜀ICP备16004713号-1</a></p>
+    </footer>
+</div>
+<div id="j-btn-up" class="back-to-top u-hide iconfont icon-up2"></div>
+{{#is "post"}}
+<script src="{{asset "js/vendor.js"}}"></script>
+<script src="{{asset "js/plugins.js"}}"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+{{/is}}
+<script type="text/javascript" src="{{asset "js/page/main.js"}}"></script>
+{{ghost_foot}}
+</body>
+</html>

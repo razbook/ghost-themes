@@ -1,0 +1,42 @@
+// Disable Background in header
+.index-header .header-background {
+	display: none;
+}
+
+// No read button
+.post-card-button {
+	display: none !important;
+}
+
+// No diagonal navigation
+#navigation::after{
+	display: none !important;
+}
+
+// Post Card Image after
+.post-card {
+	flex-direction: row-reverse;
+
+	&-image {
+		margin-right: 0;
+		margin-left: 30px;
+	}
+}
+
+// Author Image multiline
+.author-template .author {
+	&-name {
+		flex-direction: column;
+	}
+
+	&-image {
+		margin-right: 0;
+		width: 80px;
+		height: 80px;
+	}
+}
+
+// No Divider
+.post-list-divider {
+	display: none;
+}

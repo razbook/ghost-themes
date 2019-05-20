@@ -1,0 +1,15 @@
+{
+  "name": "ghost-theme-minimal",
+  "version": "1.0.0",
+  "description": "Ghost port for minimal theme",
+  "engines": {
+      "ghost": ">=1.2.0"
+  },
+  "author": {
+      "name": "Balthild",
+      "email": "ibalthild@gmail.com",
+      "url": "https://balthild.com"
+  },
+  "repository": "github:balthild/ghost-theme-minimal",
+  "license": "GPL-3.0"
+}

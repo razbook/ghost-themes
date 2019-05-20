@@ -1,0 +1,59 @@
+{
+    "name": "just-content",
+    "description": "A simpel blogging theme for Ghost that focus on the content.",
+    "demo": "https://www.stephenson.dk",
+    "version": "0.0.1",
+    "engines": {
+        "ghost": ">=2.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan .",
+        "sass": "gulp sass:watch"
+    },
+    "author": {
+        "name": "Niklas Stephenson",
+        "email": "niklas@stephenson.dk",
+        "url": "https://www.stephenson.dk"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stephenson/just-content"
+    },
+    "bugs": "https://github.com/stephenson/just-content/issues",
+    "contributors": "https://github.com/stephenson/just-content/graphs/contributors",
+    "devDependencies": {
+      "cssnano": "3.7.1",
+      "gscan": "^2.0.0",
+      "gulp": "^3.9.1",
+      "gulp-filter": "5.1.0",
+      "gulp-livereload": "3.8.1",
+      "gulp-sourcemaps": "1.6.0",
+      "gulp-uglify": "3.0.1",
+      "gulp-util": "3.0.7",
+      "gulp-watch": "4.3.8",
+      "gulp-zip": "4.0.0",
+      "gulp-sass": "4.0.2",
+      "bootstrap": "4.2.1"
+    },
+    "config": {
+        "posts_per_page": 5
+    }
+}

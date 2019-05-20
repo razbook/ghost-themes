@@ -1,0 +1,14 @@
+#error-template {
+  #error {
+    margin: $xlarge-space 0px $large-space 0px;
+    text-align: center;
+    .error-code {
+      color: $light-gray;
+    }
+    .error-description {
+      color: $dark-gray;
+      font-size: 1.2rem;
+      margin-bottom: $large-space;
+    }
+  }
+}

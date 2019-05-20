@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>{{meta_title}}</title>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="{{asset "satou.bundle.css"}}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-nanum-square/nanumsquare.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Joungkyun/font-d2coding@1.2.1/d2coding.css">
+		<link rel="stylesheet" href="https://unpkg.com/firacode@1.205.0/distr/fira_code.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+
+		{{ghost_head}}
+
+		<script>
+			window.satou = {
+				configuration: {
+					logo: "{{@blog.logo}}",
+					icon: "{{@blog.icon}}",
+					title: "{{@blog.title}}",
+					baseUrl: "{{@blog.url}}",
+					cover: "{{@blog.cover_image}}"
+				},
+				pagination: {},
+				navigation: [
+					{{navigation}}
+				]
+			};
+		</script>
+	</head>
+	<body class="{{body_class}}">
+		<div class="satou">
+			{{{body}}}
+
+			<footer class="footer font-ui-base">
+				<div class="footer-inner">
+					<span class="copyright">
+						<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+					</span>
+
+					<span class="information">
+						Proudly published with <b>Ghost</b> / Satou
+					</span>
+				</div>
+			</footer>
+
+		</div>
+
+		{{#is "tag"}}
+			<script>
+				window.satou.pagination = {
+					context: "tag",
+					data: "{{tag.slug}}",
+					pagination: {{pagination.page}},
+					limit: {{pagination.limit}}
+				};
+			</script>
+		{{/is}}
+
+		{{#is "author"}}
+			<script>
+				window.satou.pagination = {
+					context: "author",
+					data: "{{author.slug}}",
+					pagination: {{pagination.page}},
+					limit: {{pagination.limit}}
+				};
+			</script>
+		{{/is}}
+
+		{{#is "index"}}
+			<script>
+				window.satou.pagination = {
+					context: "index",
+					data: "",
+					pagination: {{pagination.page}},
+					limit: {{pagination.limit}}
+				};
+			</script>
+		{{/is}}
+
+		{{ghost_foot}}
+
+		<script src="{{asset "satou.bundle.js"}}"></script>
+	</body>
+</html>

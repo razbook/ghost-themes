@@ -1,0 +1,21 @@
+
+<!-- recent posts -->
+
+<div class="page__related">
+    <h4 class="page__related-title">You May Also Enjoy</h4>
+    <div class="grid__wrapper">
+        {{#foreach recentposts}}
+            <div class="grid__item">
+                <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+                    <h2 class="archive__item-title" itemprop="headline">
+                        <a href="{{url}}" rel="permalink">{{title}}</a>
+                    </h2>
+                    <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{reading_time}}</p>
+                    <p class="archive__item-excerpt" itemprop="description">{{excerpt}}</p>
+                </article>
+            </div>
+        {{/foreach}}
+    </div>
+</div>
+
+<!-- end recent posts -->

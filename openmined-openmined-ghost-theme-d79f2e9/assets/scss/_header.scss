@@ -1,0 +1,186 @@
+$header-bar-height: 10px;
+$header-logo-height: 40px;
+$header-items-some-size: 20px;
+$header-author-avatar-size: 48px;
+$header-subscribe-size: 32px;
+$header-author-some-size: 24px;
+
+#header {
+  position: relative;
+  padding: $large-space 0px;
+  @include tablet-up {
+    padding: $xlarge-space 0px;
+  }
+  &:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: $header-bar-height;
+    background: rgba($white, 0.25);
+    z-index: -1;
+    content: '';
+  }
+  .background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('../images/background-gradient.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    &.feature-image:after {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: rgba($black, 0.5);
+      content: '';
+    }
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $large-space;
+    @include tablet-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .header-logo {
+      height: $header-logo-height;
+      margin-bottom: $medium-space;
+      @include tablet-up {
+        margin-bottom: 0px;
+      }
+      img {
+        height: 100%;
+      }
+    }
+    .header-items {
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      @include tablet-up {
+        justify-content: flex-end;
+      }
+      li {
+        @include tablet-up {
+          &:last-of-type a {
+            margin-right: 0px;
+          }
+          a {
+            margin-right: $medium-space;
+          }
+        }
+        a {
+          display: block;
+          height: $header-items-some-size;
+          width: $header-items-some-size;
+          opacity: 0.5;
+          transition: opacity $anim-time $anim-func;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .header-content {
+    .avatar-title-subscribe {
+      display: flex;
+      align-items: center;
+      margin-bottom: $small-space;
+      .author-avatar {
+        display: none;
+        @include tablet-up {
+          display: block;
+          width: $header-author-avatar-size;
+          height: $header-author-avatar-size;
+          margin-right: $medium-space;
+          position: relative;
+          &:after {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid rgba($white, 0.5);
+            border-radius: $round-radius;
+            content: '';
+          }
+          div {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border-radius: $round-radius;
+            background-size: cover;
+            background-position: 50% 50%;
+          }
+        }
+      }
+      .title {
+        margin: 0px;
+        color: $white;
+        font-size: 1.25rem;
+        @include tablet-up {
+          font-size: 1.75rem;
+        }
+      }
+      .subscribe {
+        display: block;
+        width: $header-subscribe-size;
+        height: $header-subscribe-size;
+        margin-top: -2px;
+        margin-left: $medium-space;
+        opacity: 0.5;
+        transition: opacity $anim-time $anim-func;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .excerpt {
+      line-height: 2rem;
+      color: rgba($white, 0.75);
+      @include tablet-up {
+        font-size: 1.1rem;
+        line-height: 2.2rem;
+      }
+      a {
+        font-weight: $bold-weight;
+        color: $white;
+      }
+    }
+    .author-social {
+      list-style-type: none;
+      padding: 0px;
+      margin: $medium-space 0px 0px 0px;
+      display: flex;
+      li {
+        margin-right: $medium-space;
+        a {
+          display: block;
+          width: $header-author-some-size;
+          height: $header-author-some-size;
+          opacity: 0.5;
+          transition: opacity $anim-time $anim-func;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

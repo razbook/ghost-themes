@@ -1,0 +1,31 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{#contentFor "section-header"}}
+  <div class="section-header">
+    {{#tag}}
+      <h1>{{name}}</h1>
+      {{#if description}}
+        <p>{{description}}</p>
+      {{else}}
+        <p>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</p>
+      {{/if}}
+    {{/tag}}
+  </div>
+{{/contentFor}}
+
+{{!-- The main content area --}}
+{{#foreach posts}}
+    <article>
+
+      <h2><a href="{{url}}">{{title}}</a></h2>
+
+      <p>{{content words="50"}}</p>
+
+      <a class="read-more" href="{{url}}">Read more ➡</a>
+
+    </article>
+
+{{/foreach}}
+
+{{pagination}}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    {{#if post}}
+        {{#post}}
+            <meta name="description" content="{{excerpt words=50}}" />
+        {{/post}}
+    {{/if}}
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Fonts }}
+    <link href='//fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    {{! Styles }}
+    <link rel="stylesheet" type="text/css" href="{{asset "build/all.min.css"}}" />
+
+    {{! Google Analytics }}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'YOUR_ID_HERE', 'auto');
+        ga('send', 'pageview', location.pathname + location.search);
+    </script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    <div class="content-wrapper">
+        <div class="large-8 small-12 columns large-centered">
+            {{{body}}}
+        </div>
+    </div>
+
+    <footer class="site-footer text-center">
+         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+         <section class="poweredby">
+             Proudly published with <a href="https://ghost.org">Ghost</a>
+             using the <a href="https://github.com/mihneadb/no-nonsense">no-nonsense</a> theme.
+         </section>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! JS }}
+    <script type="text/javascript" src="{{asset "build/all.min.js"}}"></script>
+
+</body>
+</html>

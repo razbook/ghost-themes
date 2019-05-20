@@ -1,0 +1,46 @@
+
+
+    <!-- Home/Index Pagination Start -->
+    <nav class="pagination">
+      <ul id="pagination-ul">
+      </ul>
+    </nav>
+
+<script>
+
+    var pageTotal = {{pages}};
+    var currentPage = {{page}};
+
+    var list = document.getElementById("pagination-ul");
+
+    // insert previous link
+
+    {{#if prev}}
+        list.innerHTML = list.innerHTML + '<li><a href="{{page_url prev}}">Previous</a></li>';
+    {{else}}
+        list.innerHTML = list.innerHTML + '<li><a href="#" class="disabled"><span aria-hidden="true">Previous</span></a></li>';
+    {{/if}}
+
+    for(var i = 1; i <= pageTotal; i++)
+    {
+        if(i == currentPage)
+        {
+            list.innerHTML = list.innerHTML + '<li><a href="#" class="disabled current">'+i+'</a></li>';
+        }
+        else
+        {
+            list.innerHTML = list.innerHTML + '<li><a href="/page/'+ i +'">'+ i +'</a></li>';
+        }
+    }
+
+    // insert next page link
+    {{#if next}}
+        list.innerHTML = list.innerHTML + '<li><a href="{{page_url next}}">Next</a></li>';
+    {{else}}
+        list.innerHTML = list.innerHTML + '<li><a href="#" class="disabled"><span aria-hidden="true">Next</span></a></li>';
+    {{/if}}
+
+</script>
+
+
+    <!-- Home/Index Pagination End -->

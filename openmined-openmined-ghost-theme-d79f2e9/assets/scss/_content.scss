@@ -1,0 +1,179 @@
+// TODO: Ghost 2.0 theme support
+.kg-gallery-container, .kg-gallery-row, .kg-gallery-image {
+  display: inherit;
+}
+
+#content {
+  .post {
+    line-height: 2rem;
+    font-size: 1.1rem;
+    margin-top: $medium-space;
+    @include tablet-up {
+      margin-top: $large-space;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-top: $small-space;
+      @extend .not-capped;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: $medium-space auto;
+      @include desktop-up {
+        max-width: 60%;
+        margin: $large-space auto;
+      }
+      & ~ figcaption, & ~ small {
+        margin-top: 0px;
+        margin-bottom: $medium-space;
+        display: block;
+        text-align: center;
+        @include desktop-up {
+          margin-top: -$medium-space;
+          margin-bottom: $large-space;
+        }
+      }
+    }
+    .kg-image-card, .kg-embed-card {
+      margin: $medium-space 0px;
+      @include desktop-up {
+        margin: $large-space 0px;
+        &.kg-width-wide img {
+          max-width: 80%;
+        }
+        &.kg-width-full img {
+          max-width: 100%;
+        }
+      }
+    }
+    .responsive-table {
+      overflow-x: auto;
+      table {
+        border-collapse: collapse;
+        border: 1px solid $light-gray;
+        margin: $medium-space auto;
+        @include desktop-up {
+          margin: $large-space auto;
+          border: none;
+          box-shadow: 0px $small-space $medium-space rgba($black, 0.1);
+        }
+        td,
+        th {
+          padding: $small-space $medium-space;
+        }
+        thead {
+          background: $dark-gray;
+          color: $white;
+        }
+        tbody {
+          tr:nth-child(even) {
+            background: $white;
+          }
+        }
+      }
+      & ~ small {
+        display: block;
+        text-align: center;
+      }
+    }
+    hr {
+      border: none;
+      border-top: 1px solid $light-gray;
+      margin: $medium-space auto;
+      @include desktop-up {
+        width: 35%;
+        margin: $xlarge-space auto;
+      }
+    }
+    blockquote {
+      border-left: 4px solid $light-gray;
+      margin: $medium-space;
+      padding-left: $medium-space;
+    }
+    mark {
+      padding: $small-space / 2 $small-space;
+      background: $primary-color;
+      color: $white;
+      border-radius: $border-radius;
+    }
+    pre {
+      border-radius: $border-radius;
+      font-size: 1rem;
+    }
+  }
+  .authors ul {
+    list-style-type: none;
+    margin: $large-space 0px;
+    padding: 0px;
+    li:first-of-type {
+      font-weight: $bold-weight;
+      font-size: 1.2rem;
+      margin-bottom: $medium-space;
+    }
+    li a {
+      margin-bottom: $medium-space;
+      display: flex;
+      &:hover .metadata h4 {
+        color: $black;
+      }
+      .author-avatar {
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin-right: $medium-space;
+        position: relative;
+        &:after {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          border: 3px solid rgba($white, 0.5);
+          border-radius: $round-radius;
+          content: '';
+        }
+        div {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          border-radius: $round-radius;
+          background-size: cover;
+          background-position: 50% 50%;
+        }
+      }
+      .metadata {
+        flex: 1;
+        h4 {
+          @extend .not-capped;
+          margin: 0px;
+          font-size: 1.2rem;
+          color: $dark-gray;
+        }
+        p {
+          margin: 0px;
+          color: $medium-gray;
+        }
+      }
+    }
+  }
+  .prev-next {
+    justify-content: space-between;
+    h5 {
+      font-weight: $bold-weight;
+      color: $light-gray;
+      font-size: 1rem;
+      margin-left: $small-space;
+    }
+  }
+  .comments {
+    margin: $large-space 0px;
+  }
+}

@@ -1,0 +1,30 @@
+//
+// Mobile Menu: mostly overiding default styles
+// --------------------------------------------------
+
+.nav {
+background-color: $bp-dark-blue;
+}
+
+// hacks to modify existing menu
+.nav li a:after {
+  content: '';
+}
+
+.nav .nav-current a:after {
+  content: " ";
+  border-width: 0px;
+}
+
+.menu-button {
+   cursor: pointer;
+}
+
+.nav li:before {
+  content: none;
+}
+
+.nav-closed .no-cover .menu-button {
+  border-color: #FFFFFF;
+  color: #F4F4F4;
+}

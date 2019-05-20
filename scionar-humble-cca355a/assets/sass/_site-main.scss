@@ -1,0 +1,9 @@
+.site-main {
+  margin: 4rem 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.site-main__content {
+  @include content-wrapper();
+}

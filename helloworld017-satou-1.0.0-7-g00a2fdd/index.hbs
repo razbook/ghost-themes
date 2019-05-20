@@ -1,0 +1,34 @@
+{{!< default}}
+
+<header class="header index-header">
+	{{#if @blog.cover_image}}
+		<div class="header-background"
+			style="background-image: url({{@blog.cover_image}})">
+		</div>
+	{{/if}}
+
+	<div class="header-inner">
+		<div class="header-content">
+			<h1 class="header-title font-ui-index-title font-light">
+				{{@blog.title}}
+			</h1>
+
+			<h2 class="header-description font-ui-index-title-sub font-semilight">
+				{{@blog.description}}
+			</h2>
+		</div>
+	</div>
+</header>
+
+<main id="content" class="content" role="main">
+	<nav id="navigation"></nav>
+
+	<section id="post-list"></section>
+	<div class="search-engine-optimization">
+		{{#foreach posts}}
+			<a href="{{url}}">{{title}}</a>
+		{{/foreach}}
+
+		{{pagination}}
+	</div>
+</main>

@@ -1,0 +1,24 @@
+{{#author}}
+<div class="sidebar" class="{{author.slug}}">
+	{{#if website}}
+		{{> widget-authorwebsite}}
+	{{/if}}
+	{{> widget-github}}
+	{{> widget-medium}}
+	{{> widget-meetup}}
+	{{#has slug="todd"}}
+		<iframe src="https://feed.mikle.com/widget/v2/99948/" height="1100px" width="100%" class="fw-iframe" scrolling="no" frameborder="0"></iframe>
+	{{else}}
+		{{> widget-authortwitter}}
+	{{/has}}
+
+</div>
+{{/author}}
+
+<script>
+function authorSidebar(docs) {
+    if (docs[0]['tableau']) {
+      var apifyUrl = 'https://api.apify.com/v1/p9hj4TFpjvujADTJ3/crawlers/wztnovMJiQKzbXWDe/lastExec/results?token=Ycfxu6J2Jyk8HyboKuEw4Jfy7';
+    }
+  }
+</script>

@@ -1,0 +1,218 @@
+@import "variables.less";
+
+.social-btns .btn,
+.social-btns .btn .fa,
+.social-btns .btn:before {
+  padding: 0;
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  font-size: 14px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.author-social .btn .fab,
+.social-btns .btn .fab {
+  transform: scale(1);
+  margin: 0 10px 0 0;
+  transition: all 0.2s ease-out;
+  @media(max-width: 800px) {
+    -webkit-transform: scale(0.8);
+  }
+}
+
+.social-btns .btn:focus .fab,
+.social-btns .btn:hover .fab,
+.social-btns .btn:hover .fas {
+  color: #fff;
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.social-btns .btn:hover i {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.social-btns {
+  height: 35px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget .social-btns .btn {
+  display: inline-block;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 3px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 3px 1px rgba(95, 93, 138, 0.15);
+  opacity: 0.99;
+  padding: 0;
+}
+
+.post .social-btns .btn {
+  position: relative;
+  overflow: hidden;
+  line-height: 1;
+
+  span {
+    z-index: 20;
+  }
+
+  &:hover {
+    background: white;
+  }
+}
+
+.social-btns .btn:before {
+  display: none !important;
+}
+
+.social-btns .btn,
+.social-btns .btn .fa {
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+
+.social-btns .btn .fa {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.medium {
+  i {
+    color: lighten(@medium-color, 10%);
+  }
+
+  &:hover {
+    background-color: lighten(@medium-color, 10%) !important;
+    color: white;
+  }
+}
+
+
+.facebook {
+  i {
+    color: lighten(@facebook-color, 20%);
+  }
+
+  &:hover {
+    background-color: lighten(@facebook-color, 20%) !important;
+    color: white;
+  }
+}
+
+.twitter {
+  i {
+    color: lighten(@twitter-color, 10%);
+  }
+
+  &:hover {
+    background-color: lighten(@twitter-color, 10%) !important;
+    color: white;
+  }
+}
+
+
+.google {
+  i {
+    color: lighten(@google-color, 10%);
+  }
+
+  &:hover {
+    background-color: lighten(@google-color, 10%) !important;
+    color: white;
+  }
+}
+
+
+.github {
+  i {
+    color: lighten(@github-color, 10%);
+  }
+
+  &:hover {
+    background-color: lighten(@github-color, 10%) !important;
+    color: white;
+  }
+}
+
+.tumblr {
+  i {
+    color: lighten(@tumblr-color, 20%);
+  }
+
+  &:hover {
+    background-color: lighten(@tumblr-color, 20%) !important;
+    color: white;
+  }
+}
+
+.rss {
+  i {
+    color: lighten(@rss-color, 20%);
+  }
+
+  &:hover {
+    background-color: lighten(@rss-color, 20%) !important;
+    color: white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.facebook {
+  i {
+  color: lighten(@facebook-color, 20%);
+}
+
+.twitter i {
+  color: lighten(@twitter-color, 10%);
+}
+
+.google i {
+  color: lighten(@google-color, 10%);
+}
+
+.tumblr i {
+  color: lighten(@tumblr-color, 20%);
+}
+
+.github i {
+  color: lighten(@github-color, 10%);
+}
+
+.pocket i {
+  color: lighten(#f14861, 10%);
+}
+
+.quora i {
+  color: lighten(#b92b27, 10%);
+}
+
+.rss i {
+  color: lighten(@rss-color, 20%);
+}*/

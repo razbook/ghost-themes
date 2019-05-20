@@ -1,0 +1,75 @@
+// Colors
+// Use to name colors: http://chir.ag/projects/name-that-color/
+$color__black: #000;
+$color__black--075: rgba(0,0,0,0.075);
+$color__black--05: rgba(0,0,0,0.05);
+$color__black--50: rgba(0,0,0,0.50);
+$color__white: #fff;
+$color__white--50: rgba(256, 256, 256, 0.50);
+$color__white--95: rgba(256, 256, 256, 0.95);
+$color__gallery: #eee;
+$color__alto: #ddd;
+$color__pelorous: #33A0C0;
+$color__light-grey: #FDFDFD;
+$color__tuna: #33333d;
+$color__silver: #999;
+
+// Breakpoints
+$breakpoint__l: 1200px;
+$breakpoint__m: 685px;
+$breakpoint__s: 500px;
+
+@mixin breakpoint($point) {
+  @if $point == l {
+    @media (min-width: $breakpoint__l) {
+      @content;
+    }
+  } @else if $point == m {
+    @media (min-width: $breakpoint__m) {
+      @content;
+    }
+  } @else if $point == s {
+    @media (min-width: $breakpoint__s) {
+      @content;
+    }
+  }
+}
+
+// Typography
+@mixin font__h1() {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 130%;
+}
+
+@mixin font__h2() {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 3.4rem 0 1.2rem;
+}
+
+@mixin font__h3() {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 3rem 0 1rem;
+}
+
+// Content
+@mixin center-wrapper() {
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 0 1.6rem;
+
+  @include breakpoint('m') {
+    padding: 0 4rem;
+  }
+}
+
+@mixin content-wrapper() {
+  @include center-wrapper;
+  padding: 3rem 1.6rem 0;
+
+  @include breakpoint('m') {
+    padding: 5rem 4rem 0;
+  }
+}

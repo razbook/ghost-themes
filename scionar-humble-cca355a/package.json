@@ -1,0 +1,41 @@
+{
+  "name": "humble",
+  "version": "1.0.1",
+  "description": "Content focused Ghost theme.",
+  "author": {
+    "name": "Joona Viertola",
+    "email": "trash@joonaviertola.com",
+    "url": "https://joonaviertola.com"
+  },
+  "homepage": "https://github.com/Scionar/Humble#readme",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scionar/Humble.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Scionar/Humble/issues"
+  },
+  "engines": {
+    "ghost": ">=2.0.0"
+  },
+  "scripts": {
+    "compile-sass": "node-sass assets/sass/ -o assets/build/css/",
+    "watch-sass": "npm run compile-sass && node-sass -wr assets/sass/ -o assets/build/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  },
+  "config": {
+    "posts_per_page": 99
+  },
+  "dependencies": {
+    "hoek": "^5.0.3"
+  }
+}

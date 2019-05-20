@@ -1,0 +1,30 @@
+<!-- start sidebar -->
+<div class="sidebar">
+	{{#is "home,paged"}}
+		{{> widget-text}}
+	{{/is}}
+	{{> widget-search}}
+	{{#is "author"}}
+		{{> widget-authorwebsite}}
+		{{> widget-upcoming}}
+		{{> widget-authortwitter}}
+	{{/is}}
+	{{#is "post"}}
+		{{> widget-author}}
+	{{/is}}
+	{{^is "author"}}
+		{{> widget-social}}
+		{{> widget-sidebartag}}
+		{{> widget-sidebarnewsletter}}
+	{{/is}}
+	{{#is "home"}}
+		{{> widget-series}}
+	{{else}}
+		{{> widget-recentpost}}
+	{{/is}}
+	{{#is "home,author"}}
+		{{> widget-twitter}}
+	{{/is}}
+	{{!-- {{> widget-google-plus}} --}}
+</div>
+<!-- end sidebar -->

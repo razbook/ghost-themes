@@ -1,0 +1,11 @@
+{{#if prev}}
+<a href="{{page_url prev}}" class="btn btn-outline-primary btn-sm">Newer</a>
+{{else}}
+<a href="#" class="btn btn-outline-primary btn-sm disabled">Newer</a>
+{{/if}}
+<small id="pagination-text">Page {{page}} of {{pages}}</small>
+{{#if next}}
+<a href="{{page_url next}}" class="btn btn-outline-secondary btn-sm">Older</a>
+{{else}}
+<a href="#" class="btn btn-outline-secondary btn-sm disabled">Older</a>
+{{/if}}

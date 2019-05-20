@@ -1,0 +1,15 @@
+{{!< default}} 
+{{! Post }} 
+
+    <div class="archive">
+        {{#tag}}
+            <h1 class="page__title">Tag: {{name}}</h1>
+            {{#if description}}
+                {{description}}
+            {{else}}
+                {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+            {{/if}}
+        {{/tag}}
+        
+        {{> "loop" }}
+    </div>

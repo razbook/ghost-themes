@@ -1,0 +1,55 @@
+{
+  "name": "uno-zen",
+  "description": "Minimalist and Elegant theme for Ghost",
+  "homepage": "https://github.com/kikobeats/uno-zen",
+  "version": "2.9.8",
+  "author": {
+    "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
+    "url": "https://github.com/kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikobeats/uno-zen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kikobeats/uno-zen/issues"
+  },
+  "keywords": [
+    "elegant",
+    "ghost",
+    "minimalism",
+    "theme",
+    "uno",
+    "zen"
+  ],
+  "devDependencies": {
+    "browser-sync": "latest",
+    "coffee-script": "latest",
+    "gulp": "latest",
+    "gulp-add-src": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-changed": "latest",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-header": "latest",
+    "gulp-if": "latest",
+    "gulp-sass": "latest",
+    "gulp-strip-css-comments": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "license": "MIT",
+  "browserSync": {
+    "files": [
+      "**/*.html",
+      "assets/**/*.*"
+    ],
+    "port": 3000,
+    "proxy": "http://127.0.0.1:2387"
+  }
+}

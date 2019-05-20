@@ -1,0 +1,17 @@
+.author-card {
+  text-align: center;
+}
+
+.author-card__profile-image {
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);
+  border-radius: 50%;
+  display: inline-block;
+  height: 5rem;
+  vertical-align: middle;
+}
+
+.author-card__name {
+  display: inline;
+  margin: 0 0 0 1rem;
+  vertical-align: middle;
+}

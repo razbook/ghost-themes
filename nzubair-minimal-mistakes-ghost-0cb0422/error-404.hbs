@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+
+    <link href="{{@blog.url}}/rss" type="application/atom+xml" rel="alternate" title="{{@blog.title}} Feed">
+    
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="{{asset 'css/main.css'}}" >
+    <meta http-equiv="cleartype" content="on">
+
+    {{> "appicons" }}
+
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="layout--home {{body_class}}">
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    {{navigation}}
+
+    <div id="main" role="main">
+
+       <section class="error-message">
+                    <h1 class="error-code">{{code}}</h1>
+                    <p class="error-description">{{message}}</p>
+                    <a class="error-link" href="{{@blog.url}}">Go to the front page →</a>
+        </section>
+        <br /><br />
+    </div>
+    <div class="page__footer">
+        <footer>
+            <!-- start custom footer snippets -->
+            <!-- end custom footer snippets -->
+            <div class="page__footer-follow">
+                <ul class="social-icons">
+                    <li><strong>Follow:</strong></li>
+                    <li><a href="https://twitter.com/{{> "social/twitter" }}"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i>
+                            Twitter</a></li>
+                    <li><a href="http://github.com/{{> "social/github" }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>
+                            GitHub</a></li>
+                    <li><a href="{{@blog.url}}/rss/"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i>
+                            Feed</a></li>
+                </ul>
+            </div>
+            <div class="page__footer-copyright">&copy; 2018 Nasir Zubair. Powered by <a href="http://ghost.org" rel="nofollow">Ghost</a>
+                &amp; <a href="" rel="nofollow">Minimal Mistakes for Ghost</a>.</div>
+        </footer>
+    </div>
+    <script src="{{asset 'js/main.min.js'}}"></script>
+
+    {{! analytics.hbs }}
+    {{ghost_foot}}
+</body>
+
+</html>

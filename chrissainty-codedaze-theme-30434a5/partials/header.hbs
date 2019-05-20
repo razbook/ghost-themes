@@ -1,0 +1,45 @@
+<header>
+    <div class="container">
+        <div class="row row-horizontal">
+            <div class="column logo">
+                <a href="{{@blog.url}}" class="logo">
+                    <img src="{{asset "img/logo.svg"}}" alt="CodeDaze" />
+                </a>
+            </div>
+            <div class="column hamburger">
+                <i class="fas fa-bars mobile-nav-toggle"></i>
+            </div>
+            <nav class="primary-nav">
+            {{navigation}}
+            </nav>
+        </div>
+    </div>
+    <div class="secondary-nav">
+        <div class="container">
+            {{#get "tags" limit="all" include="count.posts" order="name asc"}}
+            <ul>
+                {{#foreach tags}}
+                    <li><a href="{{url}}">{{name}}</a></li>
+                {{/foreach}}
+            </ul>
+            {{/get}}
+        </div>  
+    </div>
+    <div class="mobile-nav">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    {{navigation}}
+                    <hr>
+                    {{#get "tags" limit="all" include="count.posts" order="name asc"}}
+                    <ul class="secondary-nav">
+                        {{#foreach tags}}
+                            <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                    {{/get}}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

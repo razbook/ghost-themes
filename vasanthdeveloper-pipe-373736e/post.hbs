@@ -1,0 +1,29 @@
+{{!< default}}
+<div class="text-left container post-container">
+	{{#post}}
+	<h2 class="display-4 post-heading">{{title}}</h2>
+	<small>{{date published_at format="MMMM DD, YYYY"}} In {{#foreach tags limit="1"}}<a href="{{url}}">{{name}}</a>{{/foreach}}</small>
+	{{#if feature_image}}
+	<img class="post-image" src="{{img_url feature_image absolute='true'}}">
+	{{/if}}
+
+	{{{content}}}
+	<div class="row">
+		<div class="col-6 col-md">
+			{{#prev_post}}
+			<p style="margin-top: 1em;">Also Read: <a href="{{url absolute='true'}}">{{title}}</a></p>
+			{{/prev_post}}
+		</div>
+		<div class="col-6 col-md">
+			<div class="social-buttons text-right">
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+				<a href="#"><i class="fab fa-reddit-alien"></i></a>
+				<a href="#"><i class="fab fa-tumblr"></i></a>
+			</div>
+		</div>
+	</div>
+	{{/post}}
+</div>

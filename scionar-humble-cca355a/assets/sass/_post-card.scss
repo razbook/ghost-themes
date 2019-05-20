@@ -1,0 +1,52 @@
+.post-card {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+
+  & ~ .post-card {
+    margin: 3rem auto 0;
+
+    @include breakpoint('s') {
+      margin: 3rem auto 0;
+    }
+  }
+}
+
+.post-card__date {
+  color: $color__silver;
+  font-size: 0.7rem;
+  flex: 0 0 7rem;
+  margin: 0 1rem 0 0;
+}
+
+.post-card__title {
+  margin: 0rem;
+  display: flex;
+  font-size: 1rem;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-card__link {
+  color: $color__tuna;
+  text-decoration: none;
+  width: 100%;
+}
+
+.post-card__image-container {
+  border-radius: 0.5rem;
+  height: 4rem;
+  margin: 0.5rem 0 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.post-card__image {
+  max-width: 100%;
+  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

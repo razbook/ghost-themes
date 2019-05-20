@@ -1,0 +1,15 @@
+<div class="post-card {{post_class}}">
+  <a class="post-card__link" href="{{url}}">
+    <div class="post-card__date">
+      {{date published_at format="MMMM DD, YYYY"}}
+    </div>
+    <div class="post-card__title">
+      {{title}}
+    </div>
+    {{#if feature_image}}
+    <div class="post-card__image-container">
+      <img class="post-card__image" src="{{feature_image}}" />
+    </div>
+    {{/if}}
+  </a>
+</div>

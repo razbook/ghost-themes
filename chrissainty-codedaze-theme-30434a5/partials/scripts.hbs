@@ -1,0 +1,21 @@
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+    }
+</script>
+
+<script src="{{asset "js/vendor/highlight.pack.js"}}"></script>
+<script src="{{asset "js/vendor/manup.min.js"}}"></script>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.mobile-nav');
+
+        menu.classList.toggle('show-mobile-nav');
+    }
+    
+    document.querySelector('.mobile-nav-toggle')
+            .addEventListener('click', toggleMenu);
+    
+    hljs.initHighlightingOnLoad();
+</script>

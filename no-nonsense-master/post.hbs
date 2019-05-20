@@ -1,0 +1,77 @@
+{{!< default}}
+
+{{navigation}}
+
+<main class="content" role="main">
+
+    <article class="{{post_class}}" role="article" itemscope itemtype="http://schema.org/Article">
+    {{! Everything inside the #post tags pulls data from the post }}
+    {{#post}}
+
+        <header class="post-header">
+            <h1 class="post-title small-11 columns small-centered text-center" itemprop="headline">{{{title}}}</h1>
+            <section class="post-meta text-center">
+                <p>Published <time class="post-date" datetime="{{date format='MMMM-Do-YYYY'}}" itemprop="datePublished">{{date format="MMMM Do YYYY"}}</time> by {{author}}</p>
+                <p>
+                    {{#foreach tags}}
+                        <a class="label" href="{{@blog.url}}/tag/{{slug}}">{{name}}</a>
+                    {{/foreach}}
+                </p>
+            </section>
+            {{#if feature_image}}
+                <img src="{{img_url feature_image}}" class="post-img">
+            {{/if}}
+        </header>
+
+        <section class="post-content" itemprop="articleBody">
+            {{content}}
+        </section>
+
+        <footer class="post-footer">
+
+            <section class="share text-right">
+                <h4>Share this post</h4>
+                <ul>
+                    <li><a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <i class="fa fa-twitter fa-2x"></i>
+                    </a></li>
+                    <li><a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <i class="fa fa-facebook fa-2x"></i>
+                    </a></li>
+                    <li><a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <i class="fa fa-google-plus fa-2x"></i>
+                    </a></li>
+                </ul>
+            </section>
+
+        </footer>
+
+    {{/post}}
+    </article>
+
+    <section class="related-posts-wrapper">
+        <p>You might be interested in reading:</p>
+        <ul class="related-posts"></ul>
+    </section>
+
+    <section class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = ''; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+
+</main>

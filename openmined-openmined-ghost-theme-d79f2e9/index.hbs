@@ -1,0 +1,14 @@
+{{!< default }}
+
+{{> header }}
+{{> subscribe }}
+
+<div id="posts" class="container">
+  <div class="row">
+    {{# foreach posts }}
+      <div class="column small-12 medium-6 xlarge-4 post">
+        {{> post-card }}
+      </div>
+    {{/ foreach }}
+  </div>
+</div>

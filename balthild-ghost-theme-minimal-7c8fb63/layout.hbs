@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" href="{{asset "style.css"}}" />
+    <script src="{{asset "scale.fix.js"}}"></script>
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+<div class="wrapper">
+    <aside class="sidebar">
+        {{> "header"}}
+
+        {{> "footer"}}
+    </aside>
+
+    {{{body}}}
+
+    {{> "footer"}}
+</div>
+
+{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+{{{block "scripts"}}}
+
+{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+{{ghost_foot}}
+
+</body>
+</html>

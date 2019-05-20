@@ -1,0 +1,25 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#contentFor "section-header"}}
+  <div class="section-header welcome">
+    <p>Hi <b>stranger</b> 👋🏼. Welcome to my small blip of the internet.<br>
+      I blog about <b><a href="/tag/product-management/">product management</a></b>, <b><a href="/tag/adventure-motorcycles/">adventure motorcycles</a></b> and <b><a href="/tag/startup-life/">startup life</a></b>.</p>
+  </div>
+{{/contentFor}}
+
+{{#foreach posts}}
+    <article>
+
+      <h1><a href="{{url}}">{{title}}</a></h1>
+
+      <p>{{content words="50"}}</p>
+
+      <a class="read-more" href="{{url}}">Read more ➡</a>
+
+    </article>
+
+{{/foreach}}
+
+{{pagination}}

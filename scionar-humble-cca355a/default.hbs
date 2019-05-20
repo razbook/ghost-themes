@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <script>
+      // Default configuration variables.
+      var USE_DISQUS = false;
+      var DISQUS_SHORTNAME = '';
+
+      var disqus_config = function () {
+          this.page.url = '{{url absolute="true"}}';
+          this.page.identifier = 'ghost-{{post.comment_id}}';
+      };
+    </script>
+    <link rel="stylesheet" type="text/css" href="{{asset "build/css/main.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "build/css/prism.css"}}"/>
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+    <progress class="progress" value="0">
+        <div class="progress__container">
+            <span class="progress__bar"></span>
+        </div>
+    </progress>
+
+    <div class="site-wrapper">
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+
+        {{!-- The footer at the very bottom of the screen --}}
+        <footer class="site-footer">
+            <div class="site-footer__content">
+                <section class="site-footer__copyright">{{@blog.title}} &copy; {{date format="YYYY"}}</section>
+                <nav class="some-links">
+                    {{#if @blog.facebook}}<a class="some-links__item" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>{{/if}}
+                    {{#if @blog.twitter}}<a class="some-links__item" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>{{/if}}
+                    <a class="some-links__item" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{#if @labs.subscribers}}
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @blog.logo}}
+                <img class="subscribe-overlay-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+            {{/if}}
+            <h1 class="subscribe-overlay-title">Subscribe to {{@blog.title}}</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+            {{subscribe_form placeholder="youremail@example.com"}}
+        </div>
+    </div>
+    {{/if}}
+
+    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    {{#is "post"}}
+      <script type="text/javascript" src="{{asset "js/disqus.js"}}" defer></script>
+    {{/is}}
+
+    {{#if pagination.pages}}
+    <script>
+        var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+    <script src="{{asset "js/infinitescroll.js"}}"></script>
+    {{/if}}
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
+
+</body>
+</html>

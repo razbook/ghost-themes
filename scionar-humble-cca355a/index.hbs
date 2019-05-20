@@ -1,0 +1,17 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header. --}}
+{{> "site-header"}}
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main" role="main">
+  <div class="site-main__content">
+    {{#foreach posts}}
+      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+      {{> "post-card"}}
+    {{/foreach}}
+  </div>
+  {{pagination}}
+</main>

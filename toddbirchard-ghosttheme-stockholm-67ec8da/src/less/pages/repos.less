@@ -1,0 +1,77 @@
+@color-github: #4078c0;
+@gray: #ccc;
+@text: #555;
+@spacing: 20px;
+
+.github-cards {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 100%;
+  color: white;
+  justify-content: space-between;
+}
+
+.repo-title {
+  font-family: 'TTNorms-Medium',serif;
+  font-size: 18px !important;
+
+  &:hover {
+    color: white;
+
+    .github-card__meta,
+    .repo-title {
+      color: white;
+    }
+  }
+}
+
+.github-card {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid @gray;
+  margin: 10px 0;
+  padding: 15px;
+  color: @text;
+  text-decoration: none;
+  font-size: 13px;
+  flex: 1;
+  max-width: 32%;
+  min-width: 32%;
+  border-radius: 3px;
+  @media(max-width: 600px) {
+    min-width: 100%;
+  }
+
+  h3 {
+    margin-top: 0;
+    color: @color-github;
+    font-size: 18px !important;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &:hover {
+    background: #1fc1c1;
+
+    * {
+      color: white;
+    }
+  }
+}
+
+.github-card__language-icon {
+  font-size: 18px;
+}
+
+.github-card__meta {
+  margin-right: @spacing;
+
+  > i {
+    font-size: 14px;
+    color: #efc143;
+    margin-right: 3px;
+  }
+}

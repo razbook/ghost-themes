@@ -1,0 +1,9 @@
+<nav class="pagination {{#if next}}pagination--has-next{{/if}} {{#if prev}}pagination--has-prev{{/if}}" role="navigation">
+  {{#if prev}}
+      <a class="pagination__link" href="{{page_url prev}}"><span aria-hidden="true">{{> "icons/arrow-left"}}</span>Newer</a>
+  {{/if}}
+  <span class="pagination__page-number">{{page}} / {{pages}}</span>
+  {{#if next}}
+      <a class="pagination__link" href="{{page_url next}}">Older<span aria-hidden="true">{{> "icons/arrow-right"}}</span></a>
+  {{/if}}
+</nav>

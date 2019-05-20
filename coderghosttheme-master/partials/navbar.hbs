@@ -1,0 +1,45 @@
+
+{{#if @blog.logo}}
+    <div class="logo">
+<a class="blog-logo" href="{{@blog.url}}">
+        <img class="blog-logo-image" src="{{@blog.logo}}" alt="Blog Logo"/>
+</a>
+    </div>
+{{/if}}
+
+
+<h5>{{@blog.title}}</h5>
+<hr>
+<ul class="list-unstyled menu">
+    <li>
+        <a href="https://github.com/mbejda" target="_blank">
+         <i class="el el-github"></i> GitHub
+        </a>
+    </li>
+
+    {{#if @blog.facebook}}
+        <li>
+            <a href="{{facebook_url}}" target="_blank">
+                <i class="el el-facebook"></i> {{@blog.facebook}}
+            </a>
+        </li>
+    {{/if}}
+
+    {{#if @blog.twitter}}
+        <li>
+            <a href="{{twitter_url}}" target="_blank">
+                <i class="el el-twitter"></i> {{@blog.twitter}}
+            </a>
+        </li>
+    {{/if}}
+
+    <li>
+        <a href="skype:mbejda2?add" target="_blank">
+            <i class="el el-skype"></i> mbejda2
+        </a>
+
+    </li>
+</ul>
+
+
+

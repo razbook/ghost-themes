@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+
+    <link href="{{@blog.url}}/rss" type="application/atom+xml" rel="alternate" title="{{@blog.title}} Feed">
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="{{asset 'css/main.css'}}">
+    <meta http-equiv="cleartype" content="on">
+
+    {{> "appicons" }}
+
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="layout--home {{body_class}}">
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    {{navigation}}
+
+    <div id="main" role="main">
+
+
+        <!-- sidebar start -->
+        <div class="sidebar sticky">
+            <div itemscope itemtype="http://schema.org/Person">
+
+                <div class="author__urls-wrapper">
+
+                </div>
+            </div>
+        </div>
+        <!-- end sidebard -->
+        {{#author}}
+        <div class="archive" itemscope itemtype="http://schema.org/Person">
+
+            <h1 class="page__title"></h1>
+            <h3 class="archive__subtitle">{{name}}</h3>
+
+            <div class="author__avatar" style="float: right;">
+                <img src="{{asset "images/author.jpeg"}}" class="author__avatar" alt="{{name}}" itemprop="image">
+            </div>
+            <p class="author__bio" itemprop="description">
+                {{{bio}}}
+            </p>
+            <p></p>
+            <div class="author__urls-wrapper">
+                <h4>Follow me on:</h4>
+                <ul class="author__urls social-icons" style="margin-left: 10%">
+                    <li>
+                        <a href="https://keybase.io/{{> "social/keybase"}}" itemprop="sameAs">
+                            <i class="fa fa-fw fa-key" aria-hidden="true"></i> Keybase
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/{{> "social/twitter"}}" itemprop="sameAs">
+                            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/{{> "social/linkedin"}}" itemprop="sameAs">
+                            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/{{> "social/github"}}" itemprop="sameAs">
+                            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.stackoverflow.com/users/{{> "social/stackoverflow"}}" itemprop="sameAs">
+                            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.reddit.com/user/{{> "social/reddit"}}" itemprop="sameAs">
+                            <i class="fa fa-fw fa-reddit" aria-hidden="true"></i> Reddit
+                        </a>
+                    </li>
+                    <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+                </ul>
+            </div>
+        </div>
+
+        {{/author}}
+
+    </div>
+    <div class="page__footer">
+        <footer>
+            <!-- start custom footer snippets -->
+            <!-- end custom footer snippets -->
+            <div class="page__footer-follow">
+                <ul class="social-icons">
+                    <li><strong>Follow:</strong></li>
+                    <li><a href="https://twitter.com/{{> "social/twitter" }}"><i class="fa fa-fw fa-twitter-square"
+                                aria-hidden="true"></i>
+                            Twitter</a></li>
+                    <li><a href="http://github.com/{{> "social/github" }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>
+                            GitHub</a></li>
+                    <li><a href="{{@blog.url}}/rss/"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i>
+                            Feed</a></li>
+                </ul>
+            </div>
+            <div class="page__footer-copyright">&copy; 2018 Nasir Zubair. Powered by <a href="http://ghost.org" rel="nofollow">Ghost</a>
+                &amp; <a href="" rel="nofollow">Minimal Mistakes for Ghost</a>.</div>
+        </footer>
+    </div>
+    <script src="{{asset 'js/main.min.js'}}"></script>
+
+    {{! analytics.hbs }}
+    {{ghost_foot}}
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#post}}
+    <div class="uk-container uk-width-1-1 uk-animation-fade uk-text-inline">
+        <article class="uk-article">
+            <h2 class="uk-margin-remove uk-text-bold">{{title}}</h2>
+            <p class="uk-article-meta">Written on: {{date}}</p>
+            <hr class="uk-divider-small">
+            <p>{{content}}</p>
+        </article>
+
+        <hr>
+        <a href="{{@blog.url}}" class="uk-button uk-button-secondary"><span uk-icon="arrow-left"></span> Go Back</a>
+        <a href="" class="uk-button uk-button-secondary"><span uk-icon="arrow-up"></span></a>
+    </div>
+{{/post}}

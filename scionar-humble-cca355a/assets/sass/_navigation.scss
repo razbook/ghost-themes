@@ -1,0 +1,72 @@
+$site-nav__icon-width: 1.5rem;
+$site-nav__padding: 1.5rem;
+
+.site-nav {
+  margin: 0 calc(-1 * #{$site-nav__padding}) 0 0;
+  position: relative;
+  height: 2.5rem;
+  z-index: 1;
+  width: 4.5rem;
+}
+
+.site-nav__icon {
+  background-color: $color__white--50;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0.5rem $site-nav__padding;
+  text-align: center;
+  width: 100%;
+
+  svg {
+    height: $site-nav__icon-width;
+    width: $site-nav__icon-width;
+  }
+
+  .site-nav:hover & {
+    background-color: $color__white;
+    border-radius: 2px 0 0 2px;
+    border: 1px solid $color__gallery;
+    border-bottom: 1px solid $color__white;
+  }
+}
+
+.nav {
+  background-color: $color__white;
+  border-radius: 2px;
+  border: 1px solid $color__gallery;
+  border-bottom: 1px solid $color__alto;
+  box-shadow: 0 1px 3px 0 $color__gallery;
+  display: none;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 0;
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 0;
+  list-style: none;
+  min-width: 6rem;
+  z-index: -1;
+
+  @include breakpoint('s') {
+    font-size: 0.8rem;
+  }
+
+  .site-nav:hover & {
+    display: block;
+  }
+}
+
+.nav > li {
+  margin-top: 0.5rem;
+
+  &:first-of-type {
+    margin: 0;
+  }
+}
+
+.nav > li a {
+  color: $color__black;
+  text-decoration: none;
+}

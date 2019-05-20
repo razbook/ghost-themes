@@ -1,0 +1,17 @@
+{
+  "name": "pharos",
+  "version": "1.0.2",
+  "author": {
+    "name": "Yuan Liang",
+    "email": "yuanliang@me.com"
+  },
+  "scripts": {
+    "clean": "rm -fR ./assets/stylesheets/pharos.min.css",
+    "style": "lessc --clean-css ./assets/stylesheets/pharos.less ./assets/stylesheets/pharos.min.css"
+  },
+  "devDependencies": {
+    "less": "^2.7.2"
+  },
+  "repository": "git@github.com:yuanliang/pharos.git",
+  "license": "MIT"
+}

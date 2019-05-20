@@ -1,0 +1,10 @@
+{
+	"name": "ghostpuma",
+	"version": "1.2.0",
+    "author": {
+        "email": "i@zhelin.me"
+    },
+    "config": {
+        "posts_per_page": 5
+    }
+}

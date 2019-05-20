@@ -1,0 +1,91 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<!-- start site's main content area -->
+<section class="content-wrap">
+	<div class="container">
+			{{#post}}
+			{{> thisseries-widget}}
+				<!-- start main post area -->
+				<div class=" main-content">
+					<!-- start post -->
+
+					<article class="{{post_class}} post-page">
+						<h1 class="post-title">{{{title}}}</h1>
+						<h4 class="excerpt">{{excerpt}}</h4>
+						{{#if feature_image}}
+							<div class="featured-media">
+								<img src="{{img_url feature_image size="l"}}" alt="{{{title}}}" data-rjs="3">
+							</div>
+						{{/if}}
+
+						{{#primary_tag}}
+							{{#if feature_image}}
+								{{#get "posts" filter="primary_tag:" include="count.posts" order="published_at desc" }}
+									{{count.posts}}
+								{{/get}}
+							{{/if}}
+						{{/primary_tag}}
+
+						<div class="post-head">
+							<div class="post-meta">
+								{{#primary_tag}}
+									<span class="tags meta-item {{slug}}"><i class="fas fa-tags"></i> <span>{{name}}</span></span>
+								{{/primary_tag}}
+								{{#primary_author}}
+									{{#unless profile_image}}
+										<a href="{{url}}" class="meta-item author desktop"><i class="fas fa-user" style="width:13px; display:inline-block; margin-right:10px;"></i><span>{{name}}</span></a>
+										<a href="{{url}}" class="meta-item author mobile"><i class="fas fa-user" style="width:13px; display:inline-block; margin-right:10px;"></i><span>{{slug}}</span></a>
+									{{/unless}}
+									{{#if profile_image}}
+										<a href="{{url}}" class="meta-item author desktop"><img src="{{img_url feature_image absolute="true"}}{{img_url profile_image absolute="true"}}" alt="Author image" class="avi" data-rjs="3"><span>{{name}}</span></a>
+										<a href="{{url}}" class="meta-item author mobile"><img src="{{img_url feature_image absolute="true"}}{{img_url profile_image absolute="true"}}" alt="Author image" class="avi" data-rjs="3"><span>{{slug}}</span></a>
+									{{/if}}
+								{{/primary_author}}
+								<span class="date meta-item"><i class="fal fa-calendar"></i> <span>{{date format="MMM Do"}}</span></span>
+								<span class="readtime meta-item"><i class="fal fa-eye"></i> <span>{{reading_time}}</span></span>
+							</div>
+
+						</div>
+
+
+
+						{{#has tag="Roundup"}}
+							<div class="post-roundup-blurb">
+								<i class="fal fa-flask"></i>
+								<p>Resident Scientist Snkia works tirelessly towards robot utopia. These are his findings.</p>
+							</div>
+						{{/has}}
+
+						<div class="post-content">
+							{{content}}
+							<footer class="post-footer">
+								<div class="tag-list">
+									{{#if tags}}
+										{{tags separator=""}}
+									{{/if}}
+								</div>
+								<div class="share">
+									{{! insert share_links partials}}
+									{{> share_links}}
+								</div>
+							</footer>
+						</div>
+					</article>
+					{{> about-author}}
+						 {{#author include="count.posts"}}{{> author-card}}
+					{{/author}}
+					{{> prev-next}}
+				</div>
+				<!-- end main post area -->
+
+	</div>
+</section>
+
+{{#has tag="Roundup"}}
+	<script src="{{asset "/js/includes/previews.js"}}"></script>
+{{/has}}
+
+{{> analytics}}
+{{/post}}
+<!-- end post -->
+<!-- end site's main content area -->

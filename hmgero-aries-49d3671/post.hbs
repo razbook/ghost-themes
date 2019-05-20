@@ -1,0 +1,127 @@
+{{!< default}}
+    {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template --}}
+    {{!-- Everything inside the #post tags pulls data from the post --}} 
+    {{#post}} 
+    <main class="single-post">
+        <article>
+            <header class="post-header text-center" {{#if feature_image}} style="background-image: url({{feature_image}})" {{else}}
+                style="background-image: url({{asset "img/default.jpg"}})" {{/if}}>
+                <div class="container info">
+                    {{#if primary_tag}}
+                    <a href="{{url}}" class="category">{{primary_tag.name}}</a>
+                    {{/if}}
+                    <h1 class="title">{{title}}</h1>
+                    <div class="post-meta">
+                        {{#primary_author}}
+                        <a class="author" href="{{url}}">{{name}}</a>
+                        {{/primary_author}}  
+                        <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    </div>    
+                </div>
+            </header>
+
+            <section class="post-content">
+                {{content}}
+            </section>
+
+            <section class="reward">
+                <div class="collapse" id="money-pay">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class='alipay-img' src='{{asset "img/alipay.png"}}'>
+                            </div>
+                            <div class="col-md-6">
+                                <img class='wechat-img' src='{{asset "img/wechat.png"}}'>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <p>
+                    <button class="reward-button" data-toggle="collapse" href="#money-pay" role="button" aria-expanded="false"
+                        aria-controls="money-pay">赏</button>
+                </p>
+                <p class="money-notice">若你觉得我的文章对你有帮助,欢迎点击上方按钮对我打赏</p>
+            </section>
+
+            <section class="qr-code">
+                <img src="http://tool.hmgero.com/qrcode?content={{url absolute="true"}}" alt="">
+                <p>扫描二维码,分享此文章</p>
+            </section>
+
+            <footer class="post-footer">
+
+                {{!-- There are two options for how we display the byline/author-info.
+                If the post has more than one author, we load a specific template
+                from includes/byline-multiple.hbs, otherwise, we just use the
+                default byline. --}}
+
+                {{!-- {{#author}}
+                <section class="author">
+                    {{#if profile_image}}
+                    <figure class="author-image">
+                        <a class="img" href="javascript:;" style="background-image: url('{{profile_image}}')"></a>
+                    </figure>
+                    {{/if}}
+
+                    <section class="author-detail">
+                        <a href="javascript:;">{{name}}</a>
+                        {{#if bio}}
+                        <p>{{bio}}</p>
+                        {{else}}
+                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                        {{/if}}
+                        <div class="author-meta">
+                            {{#if location}}
+                            <span class="author-location">{{location}}</span>
+                            {{/if}}
+                            {{#if website}}
+                            <span class="author-link"><a href="{{website}}">{{website}}</a></span>
+                            {{/if}}
+                        </div>
+
+                    </section>
+                </section>
+                {{/author}} --}}
+
+            </footer>
+
+            {{!--
+            <section class="post-full-comments">
+                If you want to embed comments, this is a good place to do it!
+            </section>
+            --}}
+
+        </article>
+    
+
+        {{!-- Links to Previous/Next posts --}}
+        <aside class="read-next">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        {{#next_post}}
+                        {{> "post-card"}}
+                        {{/next_post}}
+                    </div>
+                    <div class="col-md-6">
+                        {{#prev_post}}
+                        {{> "post-card"}}
+                        {{/prev_post}}
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    {{/post}}
+
+    {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in
+    default.hbs --}}
+    {{#contentFor "scripts"}}
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
+    {{/contentFor}}

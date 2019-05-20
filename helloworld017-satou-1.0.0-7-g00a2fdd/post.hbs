@@ -1,0 +1,111 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#post}}
+
+<header class="header" {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
+	<div class="header-inner">
+		<nav id="navigation"></nav>
+	</div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+	<div class="inner">
+
+		<article class="post-full font-posting {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+			<section class="post-wrapper">
+				<header class="post-full-header">
+					<section class="post-full-meta">
+						<time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">
+							{{date format="D MMMM YYYY"}}
+						</time>
+						{{#primary_tag}}
+							<span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+						{{/primary_tag}}
+					</section>
+					<h1 class="post-full-title font-posting-title">{{title}}</h1>
+				</header>
+
+				<section class="post-full-content">
+					{{content}}
+				</section>
+			</section>
+
+			<footer class="post-full-footer">
+				{{#if @labs.subscribers}}
+				<section class="subscribe-form">
+					<h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+					<p>Get the latest posts delivered right to your inbox</p>
+					{{subscribe_form placeholder="youremail@example.com"}}
+				</section>
+				{{/if}}
+
+				<div id="author-list"></div>
+			</footer>
+
+			{{!--
+			If you use Disqus comments, just uncomment this block.
+			The only thing you need to change is "test-apkdzgmqhj" - which
+			should be replaced with your own Disqus site-id.
+
+			<section class="post-full-comments">
+				<div id="disqus_thread"></div>
+				<script>
+					var disqus_config = function () {
+						this.page.url = '{{url absolute="true"}}';
+						this.page.identifier = 'ghost-{{comment_id}}';
+					};
+					(function() {
+						var d = document, s = d.createElement('script');
+						s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+			</section>
+			--}}
+
+		</article>
+
+	</div>
+</main>
+
+{{!-- Links to Previous/Next posts --}}
+<aside class="read-next outer">
+	<div class="inner">
+		<div class="read-next-feed">
+			{{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
+			{{#next_post}}
+				{{!-- TODO postcards --}}
+			{{/next_post}}
+
+			{{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+			{{#prev_post}}
+				{{!-- TODO postcards --}}
+			{{/prev_post}}
+		</div>
+	</div>
+</aside>
+
+<div id="floating-header"></div>
+
+<script>
+	window.satou.post = {
+		title: "{{title}}",
+		url: "{{url absolute="true"}}",
+		authors: [
+			{{#foreach authors}}
+			{
+				profile_image: "{{profile_image}}",
+				bio: `{{bio}}`,
+				url: "{{url}}",
+				name: "{{name}}"
+			},
+			{{/foreach}}
+		]
+	};
+</script>
+
+{{/post}}

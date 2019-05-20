@@ -1,0 +1,16 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+  <div class="post-metadata">{{tags separator=" | " prefix="Theme: "}}, published on {{date format="D MMMM YYYY"}} - {{reading_time}}.</div>
+
+  <h1>{{title}}</h1>
+
+  {{content}}
+
+  {{#if @labs.subscribers}}
+    {{subscribe_form placeholder="youremail@example.com"}}
+  {{/if}}
+{{/post}}

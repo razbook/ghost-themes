@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap 4 CSS -->
+	<link rel="stylesheet" type="text/css" href="{{asset 'css/Bootstrap4/bootstrap.min.css'}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset 'css/Bootstrap4/bootstrap-grid.min.css'}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset 'css/Bootstrap4/bootstrap-reboot.min.css'}}" />
+
+	<!-- Pipe CSS -->
+	<link rel="stylesheet" type="text/css" href="{{asset 'css/pipe.css'}}">
+
+	<!-- Title -->
+	<title>{{meta_title}}</title>
+
+	<!-- Ghost Header -->
+	{{ghost_head}}
+</head>
+<body>
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+		
+		{{#if @blog.logo}}
+		<a href="{{@blog.url}}" class="my-0 mr-md-auto"><img src="{{img_url @blog.logo absolute='true'}}" class="blog-logo"></a>
+		{{else}}
+		<h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="{{@blog.url}}">{{@blog.title}}</a></h5>
+		{{/if}}
+
+		<!-- Navigation -->
+		{{navigation}}
+	</div>
+
+	{{{body}}}
+
+	<!-- Footer -->
+	<footer id="footer" class="bg-white border-top align-items-center box-shadow-top">
+    	<p class="float-right">
+    		<!-- Subscribe Link -->
+    		{{#if @labs.subscribers}}<a id="sub-link" href="/subscribe">Subscribe</a>{{/if}}
+    		{{#if @blog.twitter}}<a target="_blank" href="{{twitter_url}}"><i class="fab fa-twitter"></i></a>{{/if}}
+    		{{#if @blog.facebook}}<a target="_blank" href="{{facebook_url}}"><i class="fab fa-facebook-f"></i></a>{{/if}}
+    		<a target="_blank" href="/rss"><i class="fas fa-rss"></i></a>
+    	</p>
+
+    	<!-- DO NOT REMOVE THE CREDITS. IT WILL VOID YOUR LICENSE -->
+    	<p>&copy; {{date format="YYYY"}} {{@blog.title}}. <small class="text-muted">Designed By: <a target="_blank" href="http://www.youtube.com/vasanthdeveloper">Vasanth Developer</a>.</small></p>
+    </footer>
+
+	<!-- Ghost Footer -->
+	{{ghost_foot}}
+	<!-- Added JavaScript At The End. So Pages Load Faster -->
+	<!-- JQuery -->
+	<script src="{{asset 'js/JQuery/jquery-3.3.1.slim.min.js'}}"></script>
+	<!-- Popper.js -->
+	<script src="{{asset 'js/Popper.js/popper.min.js'}}"></script>
+	<!-- Bootstrap 4 -->
+	<script src="{{asset 'js/Bootstrap4/bootstrap.min.js'}}"></script>
+	<!-- Font Awesome -->
+	<script differ src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+	<!-- Pipe.js -->
+	<script src="{{asset 'js/pipe.js'}}"></script>
+</body>
+</html>

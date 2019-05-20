@@ -1,0 +1,79 @@
+<article class="section-body {{post_class}}">
+
+    <header class="section-header u-textAlignCenter">
+        <h2 class="grap--h2">{{title}}</h2>
+        <div class="block-postMetaWrap">
+            <time datetime="{{published_at}}">{{date format="YYYY/MM/DD"}}</time>
+        </div>
+    </header>
+    <div class="grap">
+        {{#if feature_image}}
+            <p class="with-img">
+                <img src="{{img_url feature_image}}" alt="" width="100%"/>
+            </p>
+        {{/if}}
+
+        {{{content}}}
+    </div>
+
+
+    <div class="post--keywords u-clearfix" itemprop="keywords">
+        {{#if tags}}
+            <div class="tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+                {{/foreach}}
+            </div>
+        {{/if}}
+        <div class="share-icons" data-title="{{encode title}}" data-url="{{url absolute="true"}}">
+            <a class="iconfont icon-weibo" title="分享到微博"
+               href="https://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode
+                       title}}&pic={{#if feature_image}}{{img_url feature_image}}{{/if}}&appkey='"
+               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            </a>
+            <a class="iconfont icon-twitter" title="分享到Twitter"
+               href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}"
+               onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            </a>
+            <a class="iconfont icon-facebook" title="分享到Facebook"
+               href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+               onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            </a>
+            <a id="j-share-penyou" class="iconfont icon-pengyouquan" title="分享到朋友圈" href="{{url absolute="true"}}"></a>
+        </div>
+    </div>
+
+    <nav class="navigation post-navigation" role="navigation">
+        <h2 class="screen-reader-text">文章导航</h2>
+        <div class="nav-links">
+            {{#next_post}}
+                <div class="nav-previous">
+                    <a href="{{url}}" rel="prev">
+                        <span class="meta-nav">Previous</span>
+                        <span class="post-title">{{title}}</span>
+                    </a>
+                </div>
+            {{/next_post}}
+
+            {{#prev_post}}
+                <div class="nav-previous">
+                    <a href="{{url}}" rel="next">
+                        <span class="meta-nav">Next</span>
+                        <span class="post-title">{{title}}</span>
+                    </a>
+                </div>
+            {{/prev_post}}
+        </div>
+    </nav>
+    <div class="postFooterinfo u-textAlignCenter">
+        {{#author}}
+            {{#if profile_image}}
+                <img src="{{profile_image}}" width="64px" height="64px"
+                     alt="{{name}}" class="avatar avatar-64 wp-user-avatar wp-user-avatar-64 alignnone photo"/>
+            {{/if}}
+            <h3 class="author-name"><a href="{{url}}" title="打开{{name}}的所有文章">{{name}}</a></h3>
+            <div class="author-description"><p>{{bio}}</p>
+        {{/author}}
+        </div>
+    </div>
+</article>

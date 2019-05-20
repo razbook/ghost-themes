@@ -1,0 +1,9 @@
+<div class="post-card {{post_class}}">
+  <a class="post-card__link" href="{{url}}">
+    <div class="post-card__cover{{^unless feature_image}} post-card__cover--has-image{{/unless}}" {{^unless feature_image}}style="background-image: url({{feature_image}})"{{/unless}}>
+    </div>
+    <div class="post-card__content">
+      <div class="post-card__title">{{title}}</div>
+    </div>
+  </a>
+</div>
